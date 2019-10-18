@@ -14,7 +14,7 @@ import PersonalizedAdConsent
 import SwiftyStoreKit
 import AdSupport
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     let o = owo()
     var bannerView: GADBannerView!
     var interstitial: GADInterstitial!
@@ -31,8 +31,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        TextBox.layer.borderWidth = 1
-        TextBox.layer.borderColor = UIColor.purple.cgColor
+        TextBox_2.layer.borderWidth = 1
+        TextBox_2.layer.borderColor = UIColor.purple.cgColor
         
         interstitial = GADInterstitial(adUnitID: ADMOB_FULL_UNIT_ID)
         let request = GADRequest()
@@ -40,13 +40,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         convertCount = defaults.integer(forKey: "convertCount")
         
-        self.TextBox.delegate = self
+        self.TextBox_2.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         RemoveAds()
-        TextBox.autocorrectionType = defaults.bool(forKey: "spellCheck") ? .yes : .no
+        TextBox_2.autocorrectionType = defaults.bool(forKey: "spellCheck") ? .yes : .no
     }
     
     override func loadView() {
@@ -71,6 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var Optiosn: UISegmentedControl!
     @IBOutlet weak var TextBox: UITextField!
+    @IBOutlet weak var TextBox_2: UITextView!
     
     @IBAction func fontChange(_ sender: Any) {
         zalgoLabel.isHidden = (FontSwitch.selectedSegmentIndex != 2)
@@ -79,8 +80,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func undoText(_ sender: Any) {
-        let temp: String = TextBox.text ?? ""
-        TextBox.text = undoString
+        let temp: String = TextBox_2.text ?? ""
+        TextBox_2.text = undoString
         undoString = temp
     }
     
@@ -88,16 +89,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     var undoString: String = ""
     @IBAction func Convert(_ sender: Any) {
-        undoString = TextBox.text ?? ""
+        undoString = TextBox_2.text ?? ""
         switch Optiosn.selectedSegmentIndex{
             case 1:
-                TextBox.text = o.SpongeBoB(TextBox.text ?? "")
+                TextBox_2.text = o.SpongeBoB(TextBox_2.text ?? "")
             case 2:
-                TextBox.text = o.Clap(TextBox.text ?? "")
+                TextBox_2.text = o.Clap(TextBox_2.text ?? "")
             case 3:
-                TextBox.text = o.OWO(TextBox.text ?? "", o.uwu)
+                TextBox_2.text = o.OWO(TextBox_2.text ?? "", o.uwu)
             case 4:
-                TextBox.text = o.yeMold(TextBox.text ?? "")
+                TextBox_2.text = o.yeMold(TextBox_2.text ?? "")
         default:
             NSLog("No Change")
         }
@@ -106,7 +107,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case 1:
             fontChanger()
         case 2:
-            TextBox.text = o.doZalgo(TextBox.text ?? "", Int(zalgoSlider.value))
+            TextBox_2.text = o.doZalgo(TextBox_2.text ?? "", Int(zalgoSlider.value))
         default:
             break
         }
@@ -128,14 +129,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func fontChanger(){
         switch fontStyles.selectedSegmentIndex{
         case 0:
-            TextBox.text = o.OWO(TextBox.text ?? "", o.fancy)
+            TextBox_2.text = o.OWO(TextBox_2.text ?? "", o.fancy)
         case 1:
-            TextBox.text = o.OWO_Alt(String(TextBox.text ?? ""), o.upsideDown)
-            TextBox.text = String((TextBox.text ?? "").reversed())
+            TextBox_2.text = o.OWO_Alt(String(TextBox_2.text ?? ""), o.upsideDown)
+            TextBox_2.text = String((TextBox_2.text ?? "").reversed())
         case 2:
-            TextBox.text = o.OWO(String(TextBox.text ?? ""), o.Fraktur)
+            TextBox_2.text = o.OWO(String(TextBox_2.text ?? ""), o.Fraktur)
         case 3:
-            TextBox.text = o.OWO((TextBox.text ?? "").uppercased(), o.bubbles)
+            TextBox_2.text = o.OWO((TextBox_2.text ?? "").uppercased(), o.bubbles)
         default:
             break
         }
@@ -146,23 +147,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func Copy(_ sender: Any) {
         let pasteboard = UIPasteboard.general
-        if(TextBox.text == "" || TextBox.text == nil){
+        if(TextBox_2.text == "" || TextBox_2.text == nil){
             showBanner("Nothing To Copy!", "", true)
         }else{
-            Clipboard(TextBox.text ?? "")
-            if(TextBox.text == pasteboard.string){
-                showBanner("Text Copied", TextBox.text ?? "", false)
+            Clipboard(TextBox_2.text ?? "")
+            if(TextBox_2.text == pasteboard.string){
+                showBanner("Text Copied", TextBox_2.text ?? "", false)
             }else{
                 showBanner("Copy Failed!", "", true)
             }
         }
     }
     @IBAction func Clear(_ sender: Any) {
-        TextBox.text = ""
+        TextBox_2.text = ""
     }
     @IBAction func Paste(_ sender: Any) {
         let pasteboard = UIPasteboard.general
-        TextBox.text = pasteboard.string
+        TextBox_2.text = pasteboard.string
     }
     
     func RemoveAds(){
@@ -203,12 +204,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             ])
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        //self.view.endEditing(true)
+        TextBox_2.text = TextBox_2.text! + "\n"
         return false
     }
 }
 
-extension UITextField{
+extension UITextView{
     
     @IBInspectable var doneAccessory: Bool{
         get{
@@ -240,4 +242,6 @@ extension UITextField{
     {
         self.resignFirstResponder()
     }
+    
+    
 }

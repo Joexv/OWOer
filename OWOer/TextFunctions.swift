@@ -56,6 +56,7 @@ class owo{
         if(getGroup("iGotTheClaps")){
             Results = Text.uppercased()
         }
+        Results = Results.replacingOccurrences(of: "\n", with: "👏\n👏")
         return Results.replacingOccurrences(of: " ", with: "👏")
     }
     
