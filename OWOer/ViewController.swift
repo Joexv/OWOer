@@ -13,6 +13,7 @@ import GoogleMobileAds
 import PersonalizedAdConsent
 import SwiftyStoreKit
 import AdSupport
+import iOSDropDown
 
 class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     let o = owo()
@@ -27,6 +28,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     var convertCount: Int = 0
     var adNum: Int = 5
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                //view.backgroundColor = .darkGray
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +63,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     override func loadView() {
         super.loadView()
         RemoveAds()
+        
+        styleDropDown.listDidDisappear {
+            //self.zalgoSlider.isEnabled = self.styleDropDown.selectedIndex == 7
+        }
+        styleDropDown.optionArray = owo().styleArray
+        optionsDropDown.optionArray = owo().optionsArray
+        
     }
 
     let NBQ = NotificationBannerQueue()
@@ -62,21 +80,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         banner.show(queue: NBQ)
     }
 
-    @IBOutlet weak var FontSwitch: UISegmentedControl!
-    
     func Clipboard(_ Text: String){
         let pasteboard = UIPasteboard.general
         pasteboard.string = Text
     }
-    
-    @IBOutlet weak var Optiosn: UISegmentedControl!
-    @IBOutlet weak var TextBox: UITextField!
+
     @IBOutlet weak var TextBox_2: UITextView!
     
     @IBAction func fontChange(_ sender: Any) {
-        zalgoLabel.isHidden = (FontSwitch.selectedSegmentIndex != 2)
-        zalgoSlider.isHidden = (FontSwitch.selectedSegmentIndex != 2)
-        fontStyles.isHidden = (FontSwitch.selectedSegmentIndex != 1)
+
     }
     
     @IBAction func undoText(_ sender: Any) {
@@ -84,33 +96,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         TextBox_2.text = undoString
         undoString = temp
     }
-    
-    @IBOutlet weak var fontStyles: UISegmentedControl!
 
     var undoString: String = ""
     @IBAction func Convert(_ sender: Any) {
         undoString = TextBox_2.text ?? ""
-        switch Optiosn.selectedSegmentIndex{
-            case 1:
-                TextBox_2.text = o.SpongeBoB(TextBox_2.text ?? "")
-            case 2:
-                TextBox_2.text = o.Clap(TextBox_2.text ?? "")
-            case 3:
-                TextBox_2.text = o.OWO(TextBox_2.text ?? "", o.uwu)
-            case 4:
-                TextBox_2.text = o.yeMold(TextBox_2.text ?? "")
-        default:
-            NSLog("No Change")
-        }
         
-        switch FontSwitch.selectedSegmentIndex{
-        case 1:
-            fontChanger()
-        case 2:
-            TextBox_2.text = o.doZalgo(TextBox_2.text ?? "", Int(zalgoSlider.value))
-        default:
-            break
-        }
+        TextBox_2.text = o.textAdjustment((optionsDropDown.selectedIndex ?? 0) as Int, TextBox_2.text)
+        TextBox_2.text = o.fontChanger((styleDropDown.selectedIndex ?? 0) as Int, TextBox_2.text, Zalgo: Int(zalgoSlider.value))
         
         convertCount += 1
         if(convertCount > adNum && !defaults.bool(forKey: "Ad_Removal")){
@@ -125,23 +117,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         defaults.set(convertCount, forKey: "convertCount")
     }
     @IBOutlet weak var zalgoLabel: UILabel!
-    
-    func fontChanger(){
-        switch fontStyles.selectedSegmentIndex{
-        case 0:
-            TextBox_2.text = o.OWO(TextBox_2.text ?? "", o.fancy)
-        case 1:
-            TextBox_2.text = o.OWO_Alt(String(TextBox_2.text ?? ""), o.upsideDown)
-            TextBox_2.text = String((TextBox_2.text ?? "").reversed())
-        case 2:
-            TextBox_2.text = o.OWO(String(TextBox_2.text ?? ""), o.Fraktur)
-        case 3:
-            TextBox_2.text = o.OWO((TextBox_2.text ?? "").uppercased(), o.bubbles)
-        default:
-            break
-        }
-    }
-    
 
     @IBOutlet weak var zalgoSlider: UISlider!
     
@@ -181,6 +156,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             bannerView.load(GADRequest())
             print("There is a banner!")
         }
+        
+        #if DEBUG
+        bannerView.removeFromSuperview()
+        bannerView.isHidden = true
+        group?.set(true, forKey: "Unlocked")
+        #endif
     }
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
@@ -208,6 +189,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         TextBox_2.text = TextBox_2.text! + "\n"
         return false
     }
+    
+    @IBAction func styleChange(_ sender: Any) {
+        
+    }
+    @IBOutlet weak var styleDropDown: DropDown!
+    
+    @IBAction func optionsChange(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var optionsDropDown: DropDown!
 }
 
 extension UITextView{

@@ -1,0 +1,6 @@
+framework module Pods_OWOard {
+  umbrella header "Pods-OWOard-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		3012FAD022D004E90057D82B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012FACF22D004E90057D82B /* TableViewController.swift */; };
 		3012FAD222D02DD70057D82B /* ButtonCustomizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012FAD122D02DD70057D82B /* ButtonCustomizations.swift */; };
+		303949122398BCB9005BAAA1 /* OWOard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3039490B2398BCB9005BAAA1 /* OWOard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		303949842398CCD5005BAAA1 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949702398CCCD005BAAA1 /* KeyboardConnector.swift */; };
+		303949852398CCD5005BAAA1 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949712398CCCE005BAAA1 /* KeyboardInputTraits.swift */; };
+		303949872398CCD5005BAAA1 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949732398CCCE005BAAA1 /* KeyboardKey.swift */; };
+		303949882398CCD5005BAAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303949742398CCCF005BAAA1 /* Media.xcassets */; };
+		303949892398CCD5005BAAA1 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949752398CCCF005BAAA1 /* ImageKey.swift */; };
+		3039498A2398CCD5005BAAA1 /* ExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949762398CCCF005BAAA1 /* ExtraView.swift */; };
+		3039498B2398CCD5005BAAA1 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949772398CCD0005BAAA1 /* ForwardingView.swift */; };
+		3039498C2398CCD5005BAAA1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949782398CCD0005BAAA1 /* Utilities.swift */; };
+		3039498D2398CCD5005BAAA1 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949792398CCD1005BAAA1 /* DefaultKeyboard.swift */; };
+		3039498F2398CCD5005BAAA1 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039497B2398CCD1005BAAA1 /* Shapes.swift */; };
+		303949912398CCD5005BAAA1 /* DefaultSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3039497D2398CCD2005BAAA1 /* DefaultSettings.xib */; };
+		303949922398CCD5005BAAA1 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039497E2398CCD3005BAAA1 /* DefaultSettings.swift */; };
+		303949932398CCD5005BAAA1 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039497F2398CCD3005BAAA1 /* KeyboardModel.swift */; };
+		303949942398CCD5005BAAA1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949802398CCD4005BAAA1 /* KeyboardViewController.swift */; };
+		303949952398CCD5005BAAA1 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949812398CCD4005BAAA1 /* KeyboardLayout.swift */; };
+		303949962398CCD5005BAAA1 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949822398CCD5005BAAA1 /* DirectionEnum.swift */; };
+		303949972398CCD5005BAAA1 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303949832398CCD5005BAAA1 /* KeyboardKeyBackground.swift */; };
+		303949992398DAB7005BAAA1 /* TextFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049EB1822D3BC2600979962 /* TextFunctions.swift */; };
 		3049EB1922D3BC2600979962 /* TextFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049EB1822D3BC2600979962 /* TextFunctions.swift */; };
 		3049EB1A22D3C12000979962 /* TextFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049EB1822D3BC2600979962 /* TextFunctions.swift */; };
 		305E331422D6627800C5D13B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305E331322D6627800C5D13B /* Media.xcassets */; };
@@ -22,10 +41,25 @@
 		30A2FB8A229131C300B7BF89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A2FB88229131C300B7BF89 /* Main.storyboard */; };
 		30A2FB8C229131C300B7BF89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A2FB8B229131C300B7BF89 /* Assets.xcassets */; };
 		30A2FB8F229131C300B7BF89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A2FB8D229131C300B7BF89 /* LaunchScreen.storyboard */; };
+		30C9C9FA24764FAF0022B227 /* EmojiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9F924764FAF0022B227 /* EmojiMap.swift */; };
+		30D21A29247653D000E293BE /* EmojiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9F924764FAF0022B227 /* EmojiMap.swift */; };
+		30D21A3C2476F32F00E293BE /* emojis-OWO.json in Resources */ = {isa = PBXBuildFile; fileRef = 30D21A3A2476F32F00E293BE /* emojis-OWO.json */; };
+		30D21A3D2476F32F00E293BE /* emojis-OWO.json in Resources */ = {isa = PBXBuildFile; fileRef = 30D21A3A2476F32F00E293BE /* emojis-OWO.json */; };
+		30D21A3F2476F5A000E293BE /* EmojiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9F924764FAF0022B227 /* EmojiMap.swift */; };
+		30D21A4024776DE700E293BE /* emojis-OWO.json in Resources */ = {isa = PBXBuildFile; fileRef = 30D21A3A2476F32F00E293BE /* emojis-OWO.json */; };
+		4CAB0AF754530E096BE1FD23 /* Pods_ext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3AB6BA5F3EACAE55CB5E15 /* Pods_ext.framework */; };
 		52811BE1EA8A7E141CA77FF4 /* Pods_OWOer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBB787E845CEA6B7AD3B8DE /* Pods_OWOer.framework */; };
+		59CEDF2291E8DB0C5FA58F3E /* Pods_OWOard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BD51FF38A544665824C00A /* Pods_OWOard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		303949102398BCB9005BAAA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30A2FB79229131C200B7BF89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3039490A2398BCB9005BAAA1;
+			remoteInfo = OWOard;
+		};
 		3099BCB122D043BC00182E4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30A2FB79229131C200B7BF89 /* Project object */;
@@ -42,6 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				303949122398BCB9005BAAA1 /* OWOard.appex in Embed App Extensions */,
 				3099BCB322D043BC00182E4F /* ext.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -50,9 +85,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B3AB6BA5F3EACAE55CB5E15 /* Pods_ext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CB3CC086D7F673F496675A8 /* Pods-OWOard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OWOard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OWOard/Pods-OWOard.debug.xcconfig"; sourceTree = "<group>"; };
+		23BD51FF38A544665824C00A /* Pods_OWOard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OWOard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3012FACF22D004E90057D82B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		3012FAD122D02DD70057D82B /* ButtonCustomizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomizations.swift; sourceTree = "<group>"; };
 		3012FAF222D031170057D82B /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		3039490B2398BCB9005BAAA1 /* OWOard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OWOard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3039490F2398BCB9005BAAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3039491C2398C8E0005BAAA1 /* KeyboardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeyboardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		303949702398CCCD005BAAA1 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
+		303949712398CCCE005BAAA1 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
+		303949732398CCCE005BAAA1 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
+		303949742398CCCF005BAAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		303949752398CCCF005BAAA1 /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
+		303949762398CCCF005BAAA1 /* ExtraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraView.swift; sourceTree = "<group>"; };
+		303949772398CCD0005BAAA1 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
+		303949782398CCD0005BAAA1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		303949792398CCD1005BAAA1 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
+		3039497B2398CCD1005BAAA1 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		3039497D2398CCD2005BAAA1 /* DefaultSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultSettings.xib; sourceTree = "<group>"; };
+		3039497E2398CCD3005BAAA1 /* DefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
+		3039497F2398CCD3005BAAA1 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
+		303949802398CCD4005BAAA1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		303949812398CCD4005BAAA1 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
+		303949822398CCD5005BAAA1 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
+		303949832398CCD5005BAAA1 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKeyBackground.swift; sourceTree = "<group>"; };
+		303949982398CD57005BAAA1 /* OWOard-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OWOard-Bridging-Header.h"; sourceTree = "<group>"; };
+		3039499A2398E7A7005BAAA1 /* OWOard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OWOard.entitlements; sourceTree = "<group>"; };
 		3049EB1722D3BAA200979962 /* extDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = extDebug.entitlements; sourceTree = "<group>"; };
 		3049EB1822D3BC2600979962 /* TextFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFunctions.swift; sourceTree = "<group>"; };
 		305E331322D6627800C5D13B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -70,17 +130,33 @@
 		30A2FB90229131C300B7BF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30C1E74322D53F35004CEE1C /* extRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = extRelease.entitlements; sourceTree = "<group>"; };
 		30C1E74422D53F5D004CEE1C /* OWOerRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OWOerRelease.entitlements; sourceTree = "<group>"; };
+		30C9C9F924764FAF0022B227 /* EmojiMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMap.swift; sourceTree = "<group>"; };
+		30D21A2F2476EFEE00E293BE /* Emojimap.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = Emojimap.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D21A312476EFF700E293BE /* Emojimap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Emojimap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D21A3A2476F32F00E293BE /* emojis-OWO.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "emojis-OWO.json"; sourceTree = "<group>"; };
 		5DBB787E845CEA6B7AD3B8DE /* Pods_OWOer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OWOer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AA9600C20AEC908B4DDBA6 /* Pods-OWOer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OWOer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OWOer/Pods-OWOer.release.xcconfig"; sourceTree = "<group>"; };
 		C81F4180ADF4984A99FAF82B /* Pods-OWOer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OWOer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OWOer/Pods-OWOer.debug.xcconfig"; sourceTree = "<group>"; };
+		D88F2F593ED7AB725CF825D1 /* Pods-ext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ext.release.xcconfig"; path = "Pods/Target Support Files/Pods-ext/Pods-ext.release.xcconfig"; sourceTree = "<group>"; };
+		DA67671E658DCDE11A920595 /* Pods-OWOard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OWOard.release.xcconfig"; path = "Pods/Target Support Files/Pods-OWOard/Pods-OWOard.release.xcconfig"; sourceTree = "<group>"; };
+		ECBFF7EE817C0632A90AA322 /* Pods-ext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ext/Pods-ext.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		303949082398BCB9005BAAA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CEDF2291E8DB0C5FA58F3E /* Pods_OWOard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3099BCA322D043BB00182E4F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3099BCA722D043BB00182E4F /* Messages.framework in Frameworks */,
+				4CAB0AF754530E096BE1FD23 /* Pods_ext.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +171,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3039490C2398BCB9005BAAA1 /* OWOard */ = {
+			isa = PBXGroup;
+			children = (
+				3039499A2398E7A7005BAAA1 /* OWOard.entitlements */,
+				303949792398CCD1005BAAA1 /* DefaultKeyboard.swift */,
+				3039497E2398CCD3005BAAA1 /* DefaultSettings.swift */,
+				3039497D2398CCD2005BAAA1 /* DefaultSettings.xib */,
+				303949822398CCD5005BAAA1 /* DirectionEnum.swift */,
+				303949762398CCCF005BAAA1 /* ExtraView.swift */,
+				303949772398CCD0005BAAA1 /* ForwardingView.swift */,
+				303949752398CCCF005BAAA1 /* ImageKey.swift */,
+				303949982398CD57005BAAA1 /* OWOard-Bridging-Header.h */,
+				303949702398CCCD005BAAA1 /* KeyboardConnector.swift */,
+				303949712398CCCE005BAAA1 /* KeyboardInputTraits.swift */,
+				303949732398CCCE005BAAA1 /* KeyboardKey.swift */,
+				303949832398CCD5005BAAA1 /* KeyboardKeyBackground.swift */,
+				303949812398CCD4005BAAA1 /* KeyboardLayout.swift */,
+				3039497F2398CCD3005BAAA1 /* KeyboardModel.swift */,
+				303949802398CCD4005BAAA1 /* KeyboardViewController.swift */,
+				303949742398CCCF005BAAA1 /* Media.xcassets */,
+				3039497B2398CCD1005BAAA1 /* Shapes.swift */,
+				303949782398CCD0005BAAA1 /* Utilities.swift */,
+				3039490F2398BCB9005BAAA1 /* Info.plist */,
+			);
+			path = OWOard;
+			sourceTree = "<group>";
+		};
 		3099BCA822D043BB00182E4F /* ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +216,7 @@
 			children = (
 				30A2FB83229131C300B7BF89 /* OWOer */,
 				3099BCA822D043BB00182E4F /* ext */,
+				3039490C2398BCB9005BAAA1 /* OWOard */,
 				30A2FB82229131C300B7BF89 /* Products */,
 				815D8A1ACA6EE32FF01D8B8F /* Pods */,
 				4A399B8D57C9ECEC77736D2F /* Frameworks */,
@@ -124,6 +228,7 @@
 			children = (
 				30A2FB81229131C300B7BF89 /* OWOer.app */,
 				3099BCA622D043BB00182E4F /* ext.appex */,
+				3039490B2398BCB9005BAAA1 /* OWOard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +236,7 @@
 		30A2FB83229131C300B7BF89 /* OWOer */ = {
 			isa = PBXGroup;
 			children = (
+				30D21A3E2476F3A200E293BE /* Json */,
 				30C1E74422D53F5D004CEE1C /* OWOerRelease.entitlements */,
 				3096462722D04FEB00810E27 /* OWOerDebug.entitlements */,
 				30A2FB84229131C300B7BF89 /* AppDelegate.swift */,
@@ -142,15 +248,29 @@
 				3012FACF22D004E90057D82B /* TableViewController.swift */,
 				3012FAD122D02DD70057D82B /* ButtonCustomizations.swift */,
 				3049EB1822D3BC2600979962 /* TextFunctions.swift */,
+				30C9C9F924764FAF0022B227 /* EmojiMap.swift */,
 			);
 			path = OWOer;
+			sourceTree = "<group>";
+		};
+		30D21A3E2476F3A200E293BE /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				30D21A3A2476F32F00E293BE /* emojis-OWO.json */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 		4A399B8D57C9ECEC77736D2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30D21A312476EFF700E293BE /* Emojimap.framework */,
+				30D21A2F2476EFEE00E293BE /* Emojimap.bundle */,
+				3039491C2398C8E0005BAAA1 /* KeyboardKit.framework */,
 				5DBB787E845CEA6B7AD3B8DE /* Pods_OWOer.framework */,
 				3012FAF222D031170057D82B /* Messages.framework */,
+				23BD51FF38A544665824C00A /* Pods_OWOard.framework */,
+				0B3AB6BA5F3EACAE55CB5E15 /* Pods_ext.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +280,10 @@
 			children = (
 				C81F4180ADF4984A99FAF82B /* Pods-OWOer.debug.xcconfig */,
 				A8AA9600C20AEC908B4DDBA6 /* Pods-OWOer.release.xcconfig */,
+				ECBFF7EE817C0632A90AA322 /* Pods-ext.debug.xcconfig */,
+				D88F2F593ED7AB725CF825D1 /* Pods-ext.release.xcconfig */,
+				0CB3CC086D7F673F496675A8 /* Pods-OWOard.debug.xcconfig */,
+				DA67671E658DCDE11A920595 /* Pods-OWOard.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -167,10 +291,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3039490A2398BCB9005BAAA1 /* OWOard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 303949152398BCB9005BAAA1 /* Build configuration list for PBXNativeTarget "OWOard" */;
+			buildPhases = (
+				009D83D367465213390548BF /* [CP] Check Pods Manifest.lock */,
+				303949072398BCB9005BAAA1 /* Sources */,
+				303949082398BCB9005BAAA1 /* Frameworks */,
+				303949092398BCB9005BAAA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OWOard;
+			productName = OWOard;
+			productReference = 3039490B2398BCB9005BAAA1 /* OWOard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3099BCA522D043BB00182E4F /* ext */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3099BCB622D043BC00182E4F /* Build configuration list for PBXNativeTarget "ext" */;
 			buildPhases = (
+				229D0D647C1D6063386A0793 /* [CP] Check Pods Manifest.lock */,
 				3099BCA222D043BB00182E4F /* Sources */,
 				3099BCA322D043BB00182E4F /* Frameworks */,
 				3099BCA422D043BB00182E4F /* Resources */,
@@ -199,6 +342,7 @@
 			);
 			dependencies = (
 				3099BCB222D043BC00182E4F /* PBXTargetDependency */,
+				303949112398BCB9005BAAA1 /* PBXTargetDependency */,
 			);
 			name = OWOer;
 			productName = OWOer;
@@ -211,10 +355,14 @@
 		30A2FB79229131C200B7BF89 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Alternative Apps Unlimited";
 				TargetAttributes = {
+					3039490A2398BCB9005BAAA1 = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
 					3099BCA522D043BB00182E4F = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -239,15 +387,27 @@
 			targets = (
 				30A2FB80229131C300B7BF89 /* OWOer */,
 				3099BCA522D043BB00182E4F /* ext */,
+				3039490A2398BCB9005BAAA1 /* OWOard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		303949092398BCB9005BAAA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30D21A3D2476F32F00E293BE /* emojis-OWO.json in Resources */,
+				303949882398CCD5005BAAA1 /* Media.xcassets in Resources */,
+				303949912398CCD5005BAAA1 /* DefaultSettings.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3099BCA422D043BB00182E4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D21A3C2476F32F00E293BE /* emojis-OWO.json in Resources */,
 				305E331422D6627800C5D13B /* Media.xcassets in Resources */,
 				306E20B622D67EA900B285DE /* Assets.xcassets in Resources */,
 				3096462222D04AD900810E27 /* MainInterface.storyboard in Resources */,
@@ -258,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D21A4024776DE700E293BE /* emojis-OWO.json in Resources */,
 				30A2FB8F229131C300B7BF89 /* LaunchScreen.storyboard in Resources */,
 				30A2FB8C229131C300B7BF89 /* Assets.xcassets in Resources */,
 				30A2FB8A229131C300B7BF89 /* Main.storyboard in Resources */,
@@ -267,6 +428,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		009D83D367465213390548BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OWOard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		229D0D647C1D6063386A0793 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ext-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6B37F90E0F32ED36C3B9B232 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,22 +489,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OWOer/Pods-OWOer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Emojimap/Emojimap.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Emojimap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,11 +521,36 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		303949072398BCB9005BAAA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				303949852398CCD5005BAAA1 /* KeyboardInputTraits.swift in Sources */,
+				303949892398CCD5005BAAA1 /* ImageKey.swift in Sources */,
+				303949932398CCD5005BAAA1 /* KeyboardModel.swift in Sources */,
+				303949922398CCD5005BAAA1 /* DefaultSettings.swift in Sources */,
+				303949992398DAB7005BAAA1 /* TextFunctions.swift in Sources */,
+				303949962398CCD5005BAAA1 /* DirectionEnum.swift in Sources */,
+				3039498C2398CCD5005BAAA1 /* Utilities.swift in Sources */,
+				30D21A3F2476F5A000E293BE /* EmojiMap.swift in Sources */,
+				3039498A2398CCD5005BAAA1 /* ExtraView.swift in Sources */,
+				303949872398CCD5005BAAA1 /* KeyboardKey.swift in Sources */,
+				303949842398CCD5005BAAA1 /* KeyboardConnector.swift in Sources */,
+				3039498D2398CCD5005BAAA1 /* DefaultKeyboard.swift in Sources */,
+				3039498F2398CCD5005BAAA1 /* Shapes.swift in Sources */,
+				303949942398CCD5005BAAA1 /* KeyboardViewController.swift in Sources */,
+				303949952398CCD5005BAAA1 /* KeyboardLayout.swift in Sources */,
+				303949972398CCD5005BAAA1 /* KeyboardKeyBackground.swift in Sources */,
+				3039498B2398CCD5005BAAA1 /* ForwardingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3099BCA222D043BB00182E4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3049EB1A22D3C12000979962 /* TextFunctions.swift in Sources */,
+				30D21A29247653D000E293BE /* EmojiMap.swift in Sources */,
 				3099BCB922D044E800182E4F /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30A2FB87229131C300B7BF89 /* ViewController.swift in Sources */,
+				30C9C9FA24764FAF0022B227 /* EmojiMap.swift in Sources */,
 				3012FAD222D02DD70057D82B /* ButtonCustomizations.swift in Sources */,
 				3012FAD022D004E90057D82B /* TableViewController.swift in Sources */,
 				30A2FB85229131C300B7BF89 /* AppDelegate.swift in Sources */,
@@ -342,6 +571,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		303949112398BCB9005BAAA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3039490A2398BCB9005BAAA1 /* OWOard */;
+			targetProxy = 303949102398BCB9005BAAA1 /* PBXContainerItemProxy */;
+		};
 		3099BCB222D043BC00182E4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3099BCA522D043BB00182E4F /* ext */;
@@ -369,14 +603,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		303949132398BCB9005BAAA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CB3CC086D7F673F496675A8 /* Pods-OWOard.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = OWOard/OWOard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6BB42LR4PM;
+				INFOPLIST_FILE = OWOard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AltApps.OWOer.OWOard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OWOard/OWOard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		303949142398BCB9005BAAA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA67671E658DCDE11A920595 /* Pods-OWOard.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = OWOard/OWOard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6BB42LR4PM;
+				INFOPLIST_FILE = OWOard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AltApps.OWOer.OWOard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OWOard/OWOard-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		3099BCB422D043BC00182E4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECBFF7EE817C0632A90AA322 /* Pods-ext.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Messages Icon";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ext/extDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = ext/Media.xcassets;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
@@ -387,7 +675,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AltApps.OWOer.ext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -399,12 +687,13 @@
 		};
 		3099BCB522D043BC00182E4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D88F2F593ED7AB725CF825D1 /* Pods-ext.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Messages Icon";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ext/extRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = ext/Media.xcassets;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
@@ -415,7 +704,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AltApps.OWOer.ext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -551,7 +840,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OWOer/OWOerDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -559,7 +848,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AltApps.OWOer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -576,7 +865,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OWOer/OWOerRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -584,7 +873,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AltApps.OWOer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -596,6 +885,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		303949152398BCB9005BAAA1 /* Build configuration list for PBXNativeTarget "OWOard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303949132398BCB9005BAAA1 /* Debug */,
+				303949142398BCB9005BAAA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3099BCB622D043BC00182E4F /* Build configuration list for PBXNativeTarget "ext" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

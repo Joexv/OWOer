@@ -13,4 +13,17 @@ target 'OWOer' do
   pod 'SwiftyStoreKit'
   pod 'Google-Mobile-Ads-SDK'
   pod 'PersonalizedAdConsent'
+  pod 'iOSDropDown'
+  pod 'Emojimap'
+end
+
+target 'OWOard' do
+  use_frameworks!
+  pod 'Emojimap'
+end
+
+target 'ext' do
+  use_frameworks!
+  pod 'iOSDropDown'
+  pod 'Emojimap'
 end

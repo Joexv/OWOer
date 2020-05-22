@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,62 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYt-Ly-WjL">
-                                <rect key="frame" x="16" y="103" width="70" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="fhg-BT-8pH"/>
-                                    <constraint firstAttribute="width" constant="70" id="ozu-JS-wrW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ngh-dY-dVU">
-                                <rect key="frame" x="16" y="175" width="290" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="XjR-ZT-I2D"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="None"/>
-                                    <segment title="cApS"/>
-                                    <segment title="👏"/>
-                                    <segment title="UwU"/>
-                                    <segment title="Ye Olde"/>
-                                </segments>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BRl-8i-FOL">
-                                <rect key="frame" x="16" y="64" width="288" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="0aJ-W6-w2X"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Plain"/>
-                                    <segment title="Style"/>
-                                    <segment title="Zalgo"/>
-                                </segments>
-                                <connections>
-                                    <action selector="fontChange:" destination="ObA-dk-sSI" eventType="valueChanged" id="v6d-hR-zVb"/>
-                                </connections>
-                            </segmentedControl>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="JzT-Dh-SSa">
-                                <rect key="frame" x="109" y="99" width="197" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="JzT-Dh-SSa">
+                                <rect key="frame" x="152" y="137" width="156" height="30"/>
                             </slider>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rYd-ts-tS0">
-                                <rect key="frame" x="16" y="136" width="288" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="50B-hX-iXC"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Fancy"/>
-                                    <segment title="Flipped"/>
-                                    <segment title="Gothic"/>
-                                    <segment title="Bubbles"/>
-                                </segments>
-                            </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Tap here to get started" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEy-XZ-OhA">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Tap here to get started" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEy-XZ-OhA">
                                 <rect key="frame" x="16" y="22" width="288" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="EFL-Tl-hDo"/>
+                                    <constraint firstAttribute="height" constant="34" id="z4B-2b-plE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -82,12 +34,74 @@
                                     <action selector="touchTextBox:" destination="ObA-dk-sSI" eventType="touchDown" id="PYb-r1-79Y"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more options and customiztion return to the full app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIs-FY-gCY">
+                                <rect key="frame" x="15" y="336" width="288" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="D3A-ZP-ovK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select your Font/Style" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ds5-Sq-ZxA" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="16" y="61" width="288" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select your text adjustment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xK-11-uhS" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="16" y="103" width="288" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFJ-oB-dkc" customClass="RoundButton" customModule="OWOer">
-                                <rect key="frame" x="16" y="214" width="290" height="34"/>
+                                <rect key="frame" x="16" y="174" width="290" height="34"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="34" id="0JN-1F-sHy"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Q26-ee-2qy"/>
+                                    <constraint firstAttribute="height" constant="34" id="YBf-UW-3N6"/>
                                 </constraints>
                                 <state key="normal" title="Convert"/>
                                 <userDefinedRuntimeAttributes>
@@ -99,39 +113,40 @@
                                     <action selector="Convert:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Ghm-Kb-N2F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="For more options and customiztion return to the full app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIs-FY-gCY">
-                                <rect key="frame" x="15" y="336" width="288" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zalgo Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYt-Ly-WjL">
+                                <rect key="frame" x="16" y="141" width="120" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8C6-bs-34p"/>
+                                    <constraint firstAttribute="width" constant="120" id="rZf-1Y-er1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="31N-gU-n8j"/>
-                            <constraint firstItem="rYd-ts-tS0" firstAttribute="leading" secondItem="ngh-dY-dVU" secondAttribute="leading" id="3gj-6i-pmu"/>
-                            <constraint firstItem="ngh-dY-dVU" firstAttribute="centerX" secondItem="lFJ-oB-dkc" secondAttribute="centerX" id="3qT-6Q-t4C"/>
-                            <constraint firstItem="JzT-Dh-SSa" firstAttribute="trailing" secondItem="rYd-ts-tS0" secondAttribute="trailing" id="47A-qY-U0J"/>
-                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="22" id="78a-6R-odf"/>
-                            <constraint firstItem="lFJ-oB-dkc" firstAttribute="top" secondItem="ngh-dY-dVU" secondAttribute="bottom" constant="8" id="8Kq-jd-Prn"/>
-                            <constraint firstItem="ngh-dY-dVU" firstAttribute="top" secondItem="rYd-ts-tS0" secondAttribute="bottom" constant="8" id="C48-60-Ze9"/>
-                            <constraint firstItem="LIs-FY-gCY" firstAttribute="top" secondItem="lFJ-oB-dkc" secondAttribute="bottom" constant="78" id="C84-7o-eFJ"/>
-                            <constraint firstItem="BRl-8i-FOL" firstAttribute="trailing" secondItem="JzT-Dh-SSa" secondAttribute="trailing" id="DiQ-YU-4eB"/>
-                            <constraint firstItem="rYd-ts-tS0" firstAttribute="centerX" secondItem="lFJ-oB-dkc" secondAttribute="centerX" id="HB8-7d-FdU"/>
-                            <constraint firstItem="JzT-Dh-SSa" firstAttribute="top" secondItem="BRl-8i-FOL" secondAttribute="bottom" constant="4" id="HJ8-Bu-JK3"/>
-                            <constraint firstItem="BRl-8i-FOL" firstAttribute="leading" secondItem="AYt-Ly-WjL" secondAttribute="leading" id="MD4-dN-ok7"/>
-                            <constraint firstItem="JzT-Dh-SSa" firstAttribute="leading" secondItem="AYt-Ly-WjL" secondAttribute="trailing" constant="25" id="Q0G-6n-20z"/>
-                            <constraint firstItem="ngh-dY-dVU" firstAttribute="leading" secondItem="LIs-FY-gCY" secondAttribute="leading" id="QV7-C4-XVd"/>
-                            <constraint firstItem="BRl-8i-FOL" firstAttribute="top" secondItem="NEy-XZ-OhA" secondAttribute="bottom" constant="8" id="Rjh-B7-MPd"/>
-                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="ngh-dY-dVU" secondAttribute="trailing" constant="14" id="XDy-sl-ErJ"/>
-                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="leading" secondItem="BRl-8i-FOL" secondAttribute="leading" id="Ylf-SD-EXz"/>
-                            <constraint firstItem="AYt-Ly-WjL" firstAttribute="leading" secondItem="rYd-ts-tS0" secondAttribute="leading" id="bvp-JF-XLB"/>
-                            <constraint firstItem="rYd-ts-tS0" firstAttribute="top" secondItem="JzT-Dh-SSa" secondAttribute="bottom" constant="8" id="fdH-Vs-Y8S"/>
-                            <constraint firstItem="AYt-Ly-WjL" firstAttribute="centerY" secondItem="JzT-Dh-SSa" secondAttribute="centerY" id="h27-vB-crP"/>
-                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="trailing" secondItem="BRl-8i-FOL" secondAttribute="trailing" id="i8o-0Z-ezN"/>
-                            <constraint firstItem="rYd-ts-tS0" firstAttribute="trailing" secondItem="lFJ-oB-dkc" secondAttribute="trailing" id="j5k-HV-Gg8"/>
-                            <constraint firstItem="lFJ-oB-dkc" firstAttribute="trailing" secondItem="LIs-FY-gCY" secondAttribute="trailing" id="mXp-1L-flz"/>
-                            <constraint firstItem="AYt-Ly-WjL" firstAttribute="top" secondItem="BRl-8i-FOL" secondAttribute="bottom" constant="8" id="otL-Fy-5gx"/>
-                            <constraint firstItem="LDy-ih-0nr" firstAttribute="bottom" secondItem="LIs-FY-gCY" secondAttribute="bottom" constant="100" id="xyT-rG-lyH"/>
+                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="22" id="1Mh-7z-zHc"/>
+                            <constraint firstItem="9xK-11-uhS" firstAttribute="leading" secondItem="AYt-Ly-WjL" secondAttribute="leading" id="EkK-3K-7G9"/>
+                            <constraint firstItem="LIs-FY-gCY" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="15" id="Ixv-TJ-iOm"/>
+                            <constraint firstItem="JzT-Dh-SSa" firstAttribute="leading" secondItem="AYt-Ly-WjL" secondAttribute="trailing" constant="18" id="JQu-7w-WFj"/>
+                            <constraint firstItem="AYt-Ly-WjL" firstAttribute="centerY" secondItem="JzT-Dh-SSa" secondAttribute="centerY" id="Kn1-yk-LIz"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="LIs-FY-gCY" secondAttribute="trailing" constant="17" id="OYk-gM-RgR"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="bottom" secondItem="LIs-FY-gCY" secondAttribute="bottom" constant="101" id="RhN-zd-xUe"/>
+                            <constraint firstItem="ds5-Sq-ZxA" firstAttribute="trailing" secondItem="9xK-11-uhS" secondAttribute="trailing" id="S29-NH-lxp"/>
+                            <constraint firstItem="AYt-Ly-WjL" firstAttribute="top" secondItem="9xK-11-uhS" secondAttribute="bottom" constant="4" id="YTT-JL-dq0"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="JzT-Dh-SSa" secondAttribute="trailing" constant="14" id="ZPZ-PQ-q48"/>
+                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="azU-EZ-rrP"/>
+                            <constraint firstItem="9xK-11-uhS" firstAttribute="top" secondItem="ds5-Sq-ZxA" secondAttribute="bottom" constant="8" id="cxL-qe-ujm"/>
+                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="leading" secondItem="ds5-Sq-ZxA" secondAttribute="leading" id="etI-LD-Rsj"/>
+                            <constraint firstItem="AYt-Ly-WjL" firstAttribute="leading" secondItem="lFJ-oB-dkc" secondAttribute="leading" id="fIy-2X-mef"/>
+                            <constraint firstItem="lFJ-oB-dkc" firstAttribute="top" secondItem="AYt-Ly-WjL" secondAttribute="bottom" constant="12" id="fsm-VT-0wD"/>
+                            <constraint firstItem="JzT-Dh-SSa" firstAttribute="trailing" secondItem="lFJ-oB-dkc" secondAttribute="trailing" id="mGO-d6-6tG"/>
+                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="trailing" secondItem="ds5-Sq-ZxA" secondAttribute="trailing" id="ncU-KW-lEt"/>
+                            <constraint firstItem="ds5-Sq-ZxA" firstAttribute="leading" secondItem="9xK-11-uhS" secondAttribute="leading" id="qLc-Kf-Ch8"/>
+                            <constraint firstItem="ds5-Sq-ZxA" firstAttribute="top" secondItem="NEy-XZ-OhA" secondAttribute="bottom" constant="5" id="ubz-9o-Uqd"/>
+                            <constraint firstItem="lFJ-oB-dkc" firstAttribute="top" secondItem="JzT-Dh-SSa" secondAttribute="bottom" constant="8" id="vbE-x5-YxC"/>
+                            <constraint firstItem="NEy-XZ-OhA" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="zr4-4K-W4f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
                     </view>
@@ -139,12 +154,11 @@
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
                         <outlet property="ConvertBUtt" destination="lFJ-oB-dkc" id="hsG-fe-dPF"/>
-                        <outlet property="FontSwitch" destination="BRl-8i-FOL" id="l8j-H7-dcn"/>
-                        <outlet property="Optiosn" destination="ngh-dY-dVU" id="Ltq-ze-Bug"/>
-                        <outlet property="StyleSwitch" destination="rYd-ts-tS0" id="T5i-OL-bQN"/>
                         <outlet property="TextBox" destination="NEy-XZ-OhA" id="AIH-u6-B4d"/>
                         <outlet property="ZalgoSlider" destination="JzT-Dh-SSa" id="oQZ-lJ-fO5"/>
+                        <outlet property="optionsDropDown" destination="9xK-11-uhS" id="hnX-Us-cfg"/>
                         <outlet property="purchaseLabel" destination="LIs-FY-gCY" id="Z4g-Ai-fnI"/>
+                        <outlet property="styleDropDown" destination="ds5-Sq-ZxA" id="1EH-oY-XBX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>

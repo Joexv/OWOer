@@ -8,6 +8,7 @@
 
 import UIKit
 import Messages
+import iOSDropDown
 
 class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     let o = owo()
@@ -27,6 +28,17 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         TextBox.layer.borderWidth = 1
         TextBox.layer.borderColor = UIColor.purple.cgColor //UIColor.systemPink.cgColor
         self.TextBox.delegate = self
+    
+        styleDropDown.optionArray = o.styleArray
+        optionsDropDown.optionArray = o.optionsArray
+        styleDropDown.isEnabled = false
+        optionsDropDown.isEnabled = false
+        
+        styleDropDown.listDidDisappear {
+            //self.ZalgoSlider.isEnabled = self.styleDropDown.selectedIndex == 7
+        }
+        
+        purchaseLabel.isHidden = true
     }
     
     // MARK: - Conversation Handling
@@ -49,6 +61,7 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         if(!(group?.bool(forKey: "Unlocked") ?? false)){
             ConvertBUtt.isEnabled = false
             TextBox.isEnabled = false
+            purchaseLabel.isHidden = false
             purchaseLabel.text = "In order to use the iMessage extension you must purchase the ad removal in the main application"
             TextBox.placeholder = "iMessage extension is locked"
         }else{
@@ -80,6 +93,7 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
+        send(ConvertedString)
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -99,45 +113,49 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         if(self.presentationStyle == .expanded && group?.bool(forKey: "Unlocked") ?? false){
             TextBox.becomeFirstResponder()
             TextBox.placeholder = "Enter text here"
+            styleDropDown.isEnabled = true
+            optionsDropDown.isEnabled = true
+            ConvertBUtt.isEnabled = true
+            purchaseLabel.isHidden = false
         }else{
             TextBox.resignFirstResponder()
             TextBox.placeholder = "Tap here to get started"
+            styleDropDown.isEnabled = false
+            optionsDropDown.isEnabled = false
+            ConvertBUtt.isEnabled = false
+            purchaseLabel.isHidden = true
         }
+        
+        
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
     
-    @IBAction func fontChange(_ sender: Any) {
-        ZalgoSlider.isEnabled = (FontSwitch.selectedSegmentIndex == 2)
-        //zalgoLabel.isEnabled  = (FontSwitch.selectedSegmentIndex == 2)
-        StyleSwitch.isEnabled  = (FontSwitch.selectedSegmentIndex == 1)
-    }
-    
-    @IBOutlet weak var zalgoLabel: UILabel!
     @IBAction func Convert(_ sender: Any) {
-        ConvertedString = ""
-        switch Optiosn.selectedSegmentIndex{
-        case 1:
-            ConvertedString = o.SpongeBoB(TextBox.text ?? "")
-        case 2:
-            ConvertedString = o.Clap(TextBox.text ?? "")
-        case 3:
-            ConvertedString = o.OWO(TextBox.text ?? "", o.uwu)
-        case 4:
-            ConvertedString = o.yeMold(TextBox.text ?? "")
+        ConvertedString = TextBox.text ?? ""
+        
+        ConvertedString = o.textAdjustment((optionsDropDown.selectedIndex ?? 0) as Int, ConvertedString)
+        ConvertedString = o.fontChanger((styleDropDown.selectedIndex ?? 0) as Int, ConvertedString, Zalgo: Int(ZalgoSlider.value))
+        /*
+        switch optionsDropDown.selectedIndex{
+            case 1:
+                ConvertedString = o.SpongeBoB(TextBox.text ?? "")
+            case 2:
+                ConvertedString = o.Clap(TextBox.text ?? "")
+            case 3:
+                ConvertedString = o.OWO(TextBox.text ?? "", o.uwu)
+            case 4:
+                ConvertedString = o.Mega_OWO(TextBox.text ?? "")
+            case 5:
+                ConvertedString = o.yeMold(TextBox.text ?? "")
         default:
             ConvertedString = TextBox.text ?? ""
+            NSLog("No Change")
         }
+        
         NSLog("Type Change: \(ConvertedString)")
-        switch FontSwitch.selectedSegmentIndex{
-        case 1:
-            fontChanger()
-        case 2:
-            ConvertedString = o.doZalgo(ConvertedString, Int(ZalgoSlider.value))
-        default:
-            break
-        }
+        fontChanger(ConvertedString)
         NSLog("Font Change: \(ConvertedString)")
-
+*/
         send(ConvertedString)
         requestPresentationStyle(.compact)
         activeConversation?.accessibilityScroll(.down)
@@ -165,7 +183,27 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         TextBox.resignFirstResponder()
     }
     
-    func fontChanger(){
+    func fontChanger(_ Text: String){
+        switch styleDropDown.selectedIndex{
+        case 1:
+                ConvertedString = o.OWO(Text, o.doubleStack)
+            case 2:
+                ConvertedString = o.OWO(Text, o.upsideDown)
+                ConvertedString = String((Text).reversed())
+            case 3:
+                ConvertedString = o.OWO(Text, o.Fraktur)
+            case 4:
+                ConvertedString = o.OWO(Text, o.fancy)
+            case 5:
+                ConvertedString = o.OWO((Text).capitalized, o.bubbles)
+            case 6:
+                ConvertedString = o.doZalgo(Text, Int(ZalgoSlider.value))
+        default:
+            break;
+        }
+    }
+    
+    func fontChanger_old(){
         switch StyleSwitch.selectedSegmentIndex{
         case 0:
             ConvertedString = o.OWO(TextBox.text ?? "", o.fancy)
@@ -181,6 +219,10 @@ class MessagesViewController: MSMessagesAppViewController, UITextFieldDelegate {
         }
     }
     var ConvertedString: String = ""
+    
+    @IBOutlet weak var optionsDropDown: DropDown!
+    @IBOutlet weak var styleDropDown: DropDown!
+    
 }
 
 extension UITextField{

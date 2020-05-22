@@ -24,6 +24,7 @@ class TableViewController: UITableViewController {
             defaults.set(false, forKey: "sendDelay")
         }
         
+        zalgoSwitch.isOn = defaults.bool(forKey: "zalgoAlways")
         clapperBoi.isOn = defaults.bool(forKey: "iGotTheClaps")
         clearSwitch.isOn = defaults.bool(forKey: "delaySend")
         
@@ -31,16 +32,36 @@ class TableViewController: UITableViewController {
         prefixSwitch.isOn = defaults.bool(forKey: "oldPrefix")
         spellSwitch.isOn = defaults.bool(forKey: "spellCheck")
         
+        heartSwitch.isOn = defaults.bool(forKey: "hearts")
+        
         if(defaults.bool(forKey: "Ad_Removal")){
             adButt.titleLabel?.text = "Thank you for supporting us!"
             adButt.isEnabled = false
         }
     }
     
+    @IBAction func reportButton(_ sender: Any) {
+        if let url = URL(string: "https://www.github.com/joexv/OWOer/issues/new") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    
+    @IBAction func heartButt(_ sender: Any) {
+        display("Info", "Enabling this will make the 'Hearts' text adjustment replace ONLY spaces instead of adding a heart to every letter")
+    }
+    @IBOutlet weak var heartSwitch: UISwitch!
+    @IBAction func heartChange(_ sender: Any) {
+        defaults.set(heartSwitch.isOn, forKey: "hearts")
+        group?.set(heartSwitch.isOn, forKey: "hearts")
+    }
+    
+    @IBOutlet weak var labelCell: UITableViewCell!
     override func viewDidAppear(_ animated: Bool) {
         if(defaults.bool(forKey: "Ad_Removal")){
             adButt.titleLabel?.text = "Thank you for supporting us!"
             adButt.isEnabled = false
+            labelCell.isHidden = true
         }
         super.viewDidAppear(true)
     }
@@ -61,6 +82,7 @@ class TableViewController: UITableViewController {
         if(defaults.bool(forKey: "Ad_Removal")){
             adButt.titleLabel?.text = "Thank you for supporting us!"
             adButt.isEnabled = false
+            labelCell.isHidden = true
         }
     }
     @IBAction func restoreButt(_ sender: Any) {
@@ -70,7 +92,7 @@ class TableViewController: UITableViewController {
                 self.showBanner("Failed!", "Error: \(results.restoreFailedPurchases)", false)
             }
             else if results.restoredPurchases.count > 0 {
-                self.showBanner("Success!", "Ads will be removed when you restart the app")
+                self.showBanner("Success!", "Ads will be removed when you restart the app, and the iMessage and keyboard extensions should fully function!")
                 print("Restore Success: \(results.restoredPurchases)")
                 self.defaults.set(true, forKey: "Ad_Removal")
                 self.group?.set(true, forKey: "Unlocked")
@@ -88,7 +110,7 @@ class TableViewController: UITableViewController {
             switch result {
             case .success(let purchase):
                 print("Purchase Success: \(purchase.productId)")
-                self.showBanner("Success!", "Ads will be removed when you restart the app")
+                self.showBanner("Success!", "Ads will be removed when you restart the app, and the iMessage and keyboard extensions should fully function!")
                 self.defaults.set(true, forKey: "Ad_Removal")
                 self.group?.set(true, forKey: "Unlocked")
             case .error(let error):
@@ -103,23 +125,33 @@ class TableViewController: UITableViewController {
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
                 case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
                 case .privacyAcknowledgementRequired:
-                    print("Unknown Error")
+                    print("Privacy Error")
                 case .unauthorizedRequestData:
-                    print("Unknown Error")
+                    print("Unauthorized Request")
                 case .invalidOfferIdentifier:
-                    print("Unknown Error")
+                    print("Invalid Offer ID")
                 case .invalidSignature:
-                    print("Unknown Error")
+                    print("Invalid Signature")
                 case .missingOfferParams:
-                    print("Unknown Error")
+                    print("Missing Offer Params")
                 case .invalidOfferPrice:
-                    print("Unknown Error")
+                    print("Invalid Offer Price")
                 @unknown default:
                     print("Unknown Error")
                 }
             }
         }
     }
+    
+    @IBAction func zalgoHelp(_ sender: Any) {
+        display("Info", "When enabled, the Zalgo style will ALWAYS be added to text. When off, you must manually select Zalgo under the Font Styles.")
+    }
+    @IBOutlet weak var zalgoSwitch: UISwitch!
+    @IBAction func zalgoChange(_ sender: Any) {
+        defaults.set(zalgoSwitch.isOn, forKey: "zalgoAlways")
+        group?.set(zalgoSwitch.isOn, forKey: "zalgoAlways")
+    }
+    
     
     @IBOutlet weak var capsSwitch: UISwitch!
     @IBAction func capsRandom(_ sender: Any) {
@@ -159,11 +191,14 @@ class TableViewController: UITableViewController {
     @IBAction func prefixButt(_ sender: Any) {
         display("Info", "When using the Ye Olde text, the prefixes won't be added to the ends of every word. Only certain words will be replaced with old timey versions of themselves.")
     }
+    @IBAction func clapsButt(_ sender: Any){
+        display("Info", "Capitalizes ALL text when using the clapping text adjustment.")
+    }
     @IBAction func correctButt(_ sender: Any) {
         display("Info", "Enables or disables autocorrection for the textbox")
     }
     @IBAction func delayButt(_ sender: Any) {
-        display("Info", "When enabled, the iMessage extension will not automatically send converted text in your conversation, and manually pressing send will be required.")
+        display("Info", "When enabled, the iMessage extension will not automatically send converted text in your conversation, and manually pressing send will be required. iOS 11+ only")
     }
     @IBAction func clearButt(_ sender: Any) {
         display("Info", "If \"Delay message sending\" is enabled, the textbox in the iMessage app will be cleared after sending your converted text. Otherwise you will have to manually delete the old text.")

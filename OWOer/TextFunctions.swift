@@ -9,9 +9,156 @@
 import Foundation
 
 class owo{
+    let styleArray: [String] = ["Plain", "Double Stack 𝕒𝕓𝕔", "Flipped ɐqɔ", "Gothic 𝔞𝔟𝔠", "Fancy 𝒶𝒷𝒸", "Bubbles 🅐🅑🅒", "Squares 🅰🅱🅲", "Zalgo", "Fancy Bold 𝓪𝓫𝓬", "Russian Style ДБC", "Asian Style 1 ﾑ乃ᄃ", "Alien ꍏꌃꉓ", "Neon ᗩᗷᑕ", "Squiggle ค๒ς", "Asian Style 2 卂乃匚", "Sign Language 👍👎👊"]
+    let optionsArray: [String] = ["None", "cApS", "👏", "UwU", "Mega UwU", "Ye Olde", "Hearts $♥", "White Bracket『$』", "Black Bracket【$】", "Emojifier"]
+    
+    func fontChanger(_ Selection: Int, _ ToChange: String, Zalgo: Int = 0) -> String{
+        var Text: String = ToChange
+        switch Selection{
+            case 1:
+                Text = OWO(Text, doubleStack)
+            case 2:
+                Text = OWO(Text, upsideDown)
+                Text = String(Array(Text).reversed())
+            case 3:
+                Text = OWO(Text, Fraktur)
+            case 4:
+                Text = OWO(Text, fancy)
+            case 5:
+                Text = OWO(Text, bubbles)
+            case 6:
+                Text = OWO(Text, square)
+            case 7:
+                if(!(group?.bool(forKey: "zalgoAlways") ?? false)){
+                   Text = doZalgo(Text, Zalgo)
+                }else{
+                    break
+            }
+            case 8:
+                Text = OWO(Text, fancyBold)
+            case 9:
+                Text = OWO(Text, totallyRussian)
+            case 10:
+                Text = OWO(Text, totallyKanji)
+            case 11:
+                Text = OWO(Text, alien)
+            case 12:
+                Text = OWO(Text, neon)
+            case 13:
+                Text = OWO(Text, squiggle)
+            case 14:
+                Text = OWO(Text, totallyMandarin)
+            case 15:
+                Text = OWO(Text, signLanguage)
+            default:
+                break;
+        }
+        
+        if(Zalgo > 0 && group?.bool(forKey: "zalgoAlways") ?? false){
+            Text = doZalgo(Text, Zalgo)
+        }
+        
+        return Text
+    }
+    
+    func textAdjustment(_ Selection: Int, _ ToChange: String) -> String{
+        var Text: String = ToChange
+        switch Selection{
+            case 1:
+                Text = SpongeBoB(Text)
+            case 2:
+                Text = Clap(Text)
+            case 3:
+                Text = OWO(Text, uwu)
+            case 4:
+                Text = Mega_OWO(Text)
+            case 5:
+                Text = yeMold(Text)
+            case 6:
+                if(group?.bool(forKey: "hearts") ?? false){
+                    Text = Clap(Text, "♥")
+                }else{
+                    Text = specialCharacter(Text, hearts)
+                }
+            case 7:
+                Text = specialCharacter(Text, wBracket)
+            case 8:
+                Text = specialCharacter(Text, bBracket)
+            case 9:
+                Text = eM.GenEmojiPasta(Text)
+                NSLog("Oh God what have I done?")
+            default:
+                NSLog("No Change")
+        }
+        return Text
+    }
+
+    let eM = EmojiMap_Mod()
     let z = zalgo()
     let defaults = UserDefaults.standard
     let group = UserDefaults.init(suiteName: "group.OWO")
+    
+    //👍👎👊✊🤛🤜🤞✌️🤟🤘👌🤏👈👉👆👇☝️✋🤚🖐🖖👋🤙🤲👐🙌👍👎👊✊🤛🤜🤞✌️🤟🤘👌🤏👈👉👆👇☝️✋🤚🖐🖖👋🤙🤲👐🙌
+    let signLanguage: [String:String] = ["a":"👍", "b":"👎", "c":"👊", "d":"✊", "e":"🤛", "f":"🤜", "g":"🤞", "h":"✌️", "i":"🤟", "j":"🤘", "k":"👌", "l":"🤏", "m":"👈", "n":"👉", "o":"👆", "p":"👇", "q":"☝️", "r":"✋", "s":"🤚", "t":"🖐", "u":"🖖", "v":"👋", "w":"🤙", "x":"🤲", "y":"👐", "z":"🙌", "A":"👍", "B":"👎", "C":"👊", "D":"✊", "E":"🤛", "F":"🤜", "G":"🤞", "H":"✌️", "I":"🤟", "J":"🤘", "K":"👌", "L":"🤏", "M":"👈", "N":"👉", "O":"👆", "P":"👇", "Q":"☝️", "R":"✋", "S":"🤚", "T":"🖐", "U":"🖖", "V":"👋", "W":"🤙", "X":"🤲", "Y":"👐", "Z":"🙌"]
+    
+    //卂乃匚ᗪ乇千Ꮆ卄丨ﾌҜㄥ爪几ㄖ卩Ɋ尺丂ㄒㄩᐯ山乂ㄚ乙卂乃匚ᗪ乇千Ꮆ卄丨ﾌҜㄥ爪几ㄖ卩Ɋ尺丂ㄒㄩᐯ山乂ㄚ乙
+    let totallyMandarin: [String:String] = ["a":"卂", "b":"乃", "c":"匚", "d":"ᗪ", "e":"乇", "f":"千", "g":"Ꮆ", "h":"卄", "i":"丨", "j":"ﾌ", "k":"Ҝ", "l":"ㄥ", "m":"爪", "n":"几", "o":"ㄖ", "p":"卩", "q":"Ɋ", "r":"尺", "s":"丂", "t":"ㄒ", "u":"ㄩ", "v":"ᐯ", "w":"山", "x":"乂", "y":"ㄚ", "z":"乙", "A":"卂", "B":"乃", "C":"匚", "D":"ᗪ", "E":"乇", "F":"千", "G":"Ꮆ", "H":"卄", "I":"丨", "J":"ﾌ", "K":"Ҝ", "L":"ㄥ", "M":"爪", "N":"几", "O":"ㄖ", "P":"卩", "Q":"Ɋ", "R":"尺", "S":"丂", "T":"ㄒ", "U":"ㄩ", "V":"ᐯ", "W":"山", "X":"乂", "Y":"ㄚ", "Z":"乙"]
+    
+    //ค๒ς๔єŦﻮђเןкɭ๓ภ๏קợгรՇยשฬאץչค๒ς๔єŦﻮђเןкɭ๓ภ๏קợгรՇยשฬאץչ
+    let squiggle: [String:String] = ["a":"ค", "b":"๒", "c":"ς", "d":"๔", "e":"є", "f":"Ŧ", "g":"ﻮ", "h":"ђ", "i":"เ", "j":"ן", "k":"к", "l":"ɭ", "m":"๓", "n":"ภ", "o":"๏", "p":"ק", "q":"ợ", "r":"г", "s":"ร", "t":"Շ", "u":"ย", "v":"ש", "w":"ฬ", "x":"א", "y":"ץ", "z":"չ", "A":"ค", "B":"๒", "C":"ς", "D":"๔", "E":"є", "F":"Ŧ", "G":"ﻮ", "H":"ђ", "I":"เ", "J":"ן", "K":"к", "L":"ɭ", "M":"๓", "N":"ภ", "O":"๏", "P":"ק", "Q":"ợ", "R":"г", "S":"ร", "T":"Շ", "U":"ย", "V":"ש", "W":"ฬ", "X":"א", "Y":"ץ", "Z":"չ"]
+    
+    //ᗩᗷᑕᗪEᖴGᕼIᒍKᒪᗰᑎOᑭᑫᖇᔕTᑌᐯᗯ᙭YᘔᗩᗷᑕᗪEᖴGᕼIᒍKᒪᗰᑎOᑭᑫᖇᔕTᑌᐯᗯ᙭Yᘔ
+    let neon: [String:String] = ["a":"ᗩ", "b":"ᗷ", "c":"ᑕ", "d":"ᗪ", "e":"E", "f":"ᖴ", "g":"G", "h":"ᕼ", "i":"I", "j":"ᒍ", "k":"K", "l":"ᒪ", "m":"ᗰ", "n":"ᑎ", "o":"O", "p":"ᑭ", "q":"ᑫ", "r":"ᖇ", "s":"ᔕ", "t":"T", "u":"ᑌ", "v":"ᐯ", "w":"ᗯ", "x":"᙭", "y":"Y", "z":"ᘔ", "A":"ᗩ", "B":"ᗷ", "C":"ᑕ", "D":"ᗪ", "E":"E", "F":"ᖴ", "G":"G", "H":"ᕼ", "I":"I", "J":"ᒍ", "K":"K", "L":"ᒪ", "M":"ᗰ", "N":"ᑎ", "O":"O", "P":"ᑭ", "Q":"ᑫ", "R":"ᖇ", "S":"ᔕ", "T":"T", "U":"ᑌ", "V":"ᐯ", "W":"ᗯ", "X":"᙭", "Y":"Y", "Z":"ᘔ", ]
+    
+    //𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩
+    let fancyBold: [String:String] = ["a" : "𝓪", "b" : "𝓫", "c" : "𝓬", "d" : "𝓭", "e" : "𝓮", "f" : "𝓯", "g" : "𝓰", "h" : "𝓱", "i" : "𝓲", "j" : "𝓳", "k" : "𝓴", "l" : "𝓵", "m" : "𝓶", "n" : "𝓷", "o" : "𝓸", "p" : "𝓹", "q" : "𝓺", "r" : "𝓻", "s" : "𝓼", "t" : "𝓽", "u" : "𝓾", "v" : "𝓿", "w" : "𝔀", "x" : "𝔁", "y" : "𝔂", "z" : "𝔃", "A" : "𝓐", "B" : "𝓑", "C" : "𝓒", "D" : "𝓓", "E" : "𝓔", "F" : "𝓕", "G" : "𝓖", "H" : "𝓗", "I" : "𝓘", "J" : "𝓙", "K" : "𝓚", "L" : "𝓛", "M" : "𝓜", "N" : "𝓝", "O" : "𝓞", "P" : "𝓟", "Q" : "𝓠", "R" : "𝓡", "S" : "𝓢", "T" : "𝓣", "U" : "𝓤", "V" : "𝓥", "W" : "𝓦", "X" : "𝓧", "Y" : "𝓨", "Z" : "𝓩"]
+    //ꍏꌃꉓꀸꍟꎇꁅꃅꀤꀭꀘ꒒ꂵꈤꂦꉣꆰꋪꌗ꓄ꀎꃴꅏꊼꌩꁴꍏꌃꉓꀸꍟꎇꁅꃅꀤꀭꀘ꒒ꂵꈤꂦꉣꆰꋪꌗ꓄ꀎꃴꅏꊼꌩꁴ
+    let alien: [String:String] = ["a":"ꍏ", "b":"ꌃ", "c":"ꉓ", "d":"ꀸ", "e":"ꍟ", "f":"ꎇ", "g":"ꁅ", "h":"ꃅ", "i":"ꀤ", "j":"ꀭ", "k":"ꀘ", "l":"꒒", "m":"ꂵ", "n":"ꈤ", "o":"ꂦ", "p":"ꉣ", "q":"ꆰ", "r":"ꋪ", "s":"ꌗ", "t":"꓄", "u":"ꀎ", "v":"ꃴ", "w":"ꅏ", "x":"ꊼ", "y":"ꌩ", "z":"ꁴ", "A":"ꍏ", "B":"ꌃ", "C":"ꉓ", "D":"ꀸ", "E":"ꍟ", "F":"ꎇ", "G":"ꁅ", "H":"ꃅ", "I":"ꀤ", "J":"ꀭ", "K":"ꀘ", "L":"꒒", "M":"ꂵ", "N":"ꈤ", "O":"ꂦ", "P":"ꉣ", "Q":"ꆰ", "R":"ꋪ", "S":"ꌗ", "T":"꓄", "U":"ꀎ", "V":"ꃴ", "W":"ꅏ", "X":"ꊼ", "Y":"ꌩ", "Z":"ꁴ"]
+    
+    //ДБCDΞFGHIJҜLMИФPǪЯSΓЦVЩЖУZДБCDΞFGHIJҜLMИФPǪЯSΓЦVЩЖУZ
+    let totallyRussian: [String:String] = ["a" : "Д", "b" : "Б", "c" : "C", "d" : "D", "e" : "Ξ", "f" : "F", "g" : "G", "h" : "H", "i" : "I", "j" : "J", "k" : "Ҝ", "l" : "L", "m" : "M", "n" : "И", "o" : "Ф", "p" : "P", "q" : "Ǫ", "r" : "Я", "s" : "S", "t" : "Γ", "u" : "Ц", "v" : "V", "w" : "Щ", "x" : "Ж", "y" : "У", "z" : "Z", "A" : "Д", "B" : "Б", "C" : "C", "D" : "D", "E" : "Ξ", "F" : "F", "G" : "G", "H" : "H", "I" : "I", "J" : "J", "K" : "Ҝ", "L" : "L", "M" : "M", "N" : "И", "O" : "Ф", "P" : "P", "Q" : "Ǫ", "R" : "Я", "S" : "S", "T" : "Γ", "U" : "Ц", "V" : "V", "W" : "Щ", "X" : "Ж", "Y" : "У", "Z" : "Z"]
+    
+    //🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉
+    let square: [String:String] = ["a":"🅰", "b":"🅱", "c":"🅲", "d":"🅳", "e":"🅴", "f":"🅵", "g":"🅶", "h":"🅷", "i":"🅸", "j":"🅹", "k":"🅺", "l":"🅻", "m":"🅼", "n":"🅽", "o":"🅾", "p":"🅿", "q":"🆀", "r":"🆁", "s":"🆂", "t":"🆃", "u":"🆄", "v":"🆅", "w":"🆆", "x":"🆇", "y":"🆈", "z":"🆉", "A":"🅰", "B":"🅱", "C":"🅲", "D":"🅳", "E":"🅴", "F":"🅵", "G":"🅶", "H":"🅷", "I":"🅸", "J":"🅹", "K":"🅺", "L":"🅻", "M":"🅼", "N":"🅽", "O":"🅾", "P":"🅿", "Q":"🆀", "R":"🆁", "S":"🆂", "T":"🆃", "U":"🆄", "V":"🆅", "W":"🆆", "X":"🆇", "Y":"🆈", "Z":"🆉"]
+    
+    //ﾑ乃ᄃり乇ｷムんﾉﾌズﾚﾶ刀のｱゐ尺丂ｲひ√Wﾒﾘ乙ﾑ乃ᄃり乇ｷムんﾉﾌズﾚﾶ刀のｱゐ尺丂ｲひ√Wﾒﾘ乙
+    let totallyKanji: [String:String] = ["a":"ﾑ", "b":"乃", "c":"ᄃ", "d":"り", "e":"乇", "f":"ｷ", "g":"ム", "h":"ん", "i":"ﾉ", "j":"ﾌ", "k":"ズ", "l":"ﾚ", "m":"ﾶ", "n":"刀", "o":"の", "p":"ｱ", "q":"ゐ", "r":"尺", "s":"丂", "t":"ｲ", "u":"ひ", "v":"√", "w":"W", "x":"ﾒ", "y":"ﾘ", "z":"乙", "A":"ﾑ", "B":"乃", "C":"ᄃ", "D":"り", "E":"乇", "F":"ｷ", "G":"ム", "H":"ん", "I":"ﾉ", "J":"ﾌ", "K":"ズ", "L":"ﾚ", "M":"ﾶ", "N":"刀", "O":"の", "P":"ｱ", "Q":"ゐ", "R":"尺", "S":"丂", "T":"ｲ", "U":"ひ", "V":"√", "W":"W", "X":"ﾒ", "Y":"ﾘ", "Z":"乙"]
+    
+    let hearts: String = "$♥"
+    let bBracket: String = "【$】"
+    let wBracket: String = "『$』"
+    
+    func specialCharacter(_ Text: String, _ Adjustment: String, WhitespaceOnly: Bool = false) -> String{
+        var results: String = ""
+        for char in Text{
+            if(WhitespaceOnly && char.isWhitespace){
+                results = results + Adjustment.replacingOccurrences(of: "$", with: String(char))
+            }else if(!char.isWhitespace && char != " "){
+                results = results + Adjustment.replacingOccurrences(of: "$", with: String(char))
+            }
+        }
+        
+        return results
+    }
+    
+    let mOWO: [String] = [" *nuzzles* ", " *pounces* ", "", " uwu ", " owo ", " :3 ", " ^^; "]
+    func Mega_OWO(_ Text: String) -> String{
+        var results: String = Text
+        for text in uwu.keys{
+            results = results.replacingOccurrences(of: text, with: uwu[text]!)
+        }
+        
+        var count: Int = 0
+        for char in results{
+            let insert: String = mOWO.randomElement()!
+            if(char == " "){
+                results.insert(contentsOf: insert, at: results[count])
+                count += insert.count
+            }
+            count += 1
+        }
+        return results
+    }
     
     func SpongeBoB(_ Text: String) -> String{
         if(!getGroup("capsRandom")){
@@ -51,13 +198,13 @@ class owo{
         return Zalgoify(Text).run()
     }
     
-    func Clap(_ Text: String) -> String{
+    func Clap(_ Text: String, _ Replacement: String = "👏") -> String{
         var Results: String = Text
-        if(getGroup("iGotTheClaps")){
+        if(getGroup("iGotTheClaps") && Replacement == "👏"){
             Results = Text.uppercased()
         }
-        Results = Results.replacingOccurrences(of: "\n", with: "👏\n👏")
-        return Results.replacingOccurrences(of: " ", with: "👏")
+        Results = Results.replacingOccurrences(of: "\n", with: "\(Replacement)\n")
+        return Results.replacingOccurrences(of: " ", with: "\(Replacement)")
     }
     
     func getGroup(_ forKey: String) -> Bool{
@@ -96,7 +243,64 @@ class owo{
         "you": "uu",
         "the ": "da ",
     ]
+    
+    let doubleStack: [String: String] = [
+        "a" : "𝕒",
+        "b" : "𝕓",
+        "c" : "𝕔",
+        "d" : "𝕕",
+        "e" : "𝕖",
+        "f" : "𝕗",
+        "g" : "𝕘",
+        "h" : "𝕙",
+        "i" : "𝕚",
+        "j" : "𝕛",
+        "k" : "𝕜",
+        "l" : "𝕝",
+        "m" : "𝕞",
+        "n" : "𝕟",
+        "o" : "𝕠",
+        "p" : "𝕡",
+        "q" : "𝕢",
+        "r" : "𝕣",
+        "s" : "𝕤",
+        "t" : "𝕥",
+        "u" : "𝕦",
+        "v" : "𝕧",
+        "w" : "𝕨",
+        "x" : "𝕩",
+        "y" : "𝕪",
+        "z" : "𝕫",
+        "A" : "𝔸",
+        "B" : "𝔹",
+        "C" : "ℂ",
+        "D" : "𝔻",
+        "E" : "𝔼",
+        "F" : "𝔽",
+        "G" : "𝔾",
+        "H" : "ℍ",
+        "I" : "𝕀",
+        "J" : "𝕁",
+        "K" : "𝕂",
+        "L" : "𝕃",
+        "M" : "𝕄",
+        "N" : "ℕ",
+        "O" : "𝕆",
+        "P" : "ℙ",
+        "Q" : "ℚ",
+        "R" : "ℝ",
+        "S" : "𝕊",
+        "T" : "𝕋",
+        "U" : "𝕌",
+        "V" : "𝕍",
+        "W" : "𝕎",
+        "X" : "𝕏",
+        "Y" : "𝕐",
+        "Z" : "ℤ",
+    ]
+    
     let fancy: [String: String] = [
+        " " : "  ",
         "a" : "𝒶",
         "b" : "𝒷",
         "c" : "𝒸",
@@ -148,7 +352,7 @@ class owo{
         "W" : "𝒲",
         "X" : "𝒳",
         "Y" : "𝒴",
-        "Z" : "𝒵"
+        "Z" : "𝒵",
     ]
     
     let Fraktur: [String: String] = [
@@ -269,33 +473,7 @@ class owo{
     "p":"d"
     ]
 
-    let bubbles: [String:String] = [
-    "A":"🅐",
-    "B":"🅑",
-    "C":"🅒",
-    "D":"🅓",
-    "E":"🅔",
-    "F":"🅕",
-    "G":"🅖",
-    "H":"🅗",
-    "I":"🅘",
-    "J":"🅙",
-    "K":"🅚",
-    "L":"🅛",
-    "M":"🅜",
-    "N":"🅝",
-    "O":"🅞",
-    "P":"🅟",
-    "Q":"🅠",
-    "R":"🅡",
-    "S":"🅢",
-    "T":"🅣",
-    "U":"🅤",
-    "V":"🅥",
-    "W":"🅦",
-    "X":"🅧",
-    "Y":"🅨",
-    "Z":"🅩",]
+    let bubbles: [String:String] = ["a":"🅐", "b":"🅑", "c":"🅒", "d":"🅓", "e":"🅔", "f":"🅕", "g":"🅖", "h":"🅗", "i":"🅘", "j":"🅙", "k":"🅚", "l":"🅛", "m":"🅜", "n":"🅝", "o":"🅞", "p":"🅟", "q":"🅠", "r":"🅡", "s":"🅢", "t":"🅣", "u":"🅤", "v":"🅥", "w":"🅦", "x":"🅧", "y":"🅨", "z":"🅩", "A":"🅐", "B":"🅑", "C":"🅒", "D":"🅓", "E":"🅔", "F":"🅕", "G":"🅖", "H":"🅗", "I":"🅘", "J":"🅙", "K":"🅚", "L":"🅛", "M":"🅜", "N":"🅝", "O":"🅞", "P":"🅟", "Q":"🅠", "R":"🅡", "S":"🅢", "T":"🅣", "U":"🅤", "V":"🅥", "W":"🅦", "X":"🅧", "Y":"🅨", "Z":"🅩"]
 }
 
 struct Gen<A> {
@@ -312,6 +490,65 @@ extension Gen {
             Array(repeating: (), count: count.run())
                 .map { self.run() }
         }
+    }
+}
+
+extension String {
+    subscript (index: Int) -> String.Index {
+        let charIndex = self.index(self.startIndex, offsetBy: index)
+        return charIndex
+    }
+
+    subscript (range: Range<Int>) -> Substring {
+        let startIndex = self.index(self.startIndex, offsetBy: range.startIndex)
+        let stopIndex = self.index(self.startIndex, offsetBy: range.startIndex + range.count)
+        return self[startIndex..<stopIndex]
+    }
+
+}
+
+/*
+class Emojifier{
+    var Max_Emojis_Per_Block = 2
+    let e = Emojis()
+    
+    func GenEmojiPasta(_ text: String) -> String{
+        let blocks: [String] = text.components(separatedBy: " ")
+        var newBlocks: [String] = []
+        
+        for item in blocks{
+            newBlocks.append(GenEmojiFromBlock(item))
+        }
+        
+        return newBlocks.joined(separator: " ")
+    }
+    
+    func GenEmojiFromBlock(_ block: String) -> String{
+        let trimmed = block.alphanumeric
+        var Emojis = getMatchingEmojis(trimmed)
+        
+        return block + " " + Emojis
+    }
+    
+    func getMatchingEmojis(_ word: String) -> String{
+        var results: String = ""
+        var key = word.lowercased()
+        if(e.Mappings[key] != nil){
+            let emojis = e.Mappings[key]
+            let numEmojis = (Int(arc4random_uniform(2)) * Max_Emojis_Per_Block)
+            for n in 1...numEmojis{
+                results += (emojis?.randomElement())!
+            }
+        }
+        
+        return results
+    }
+}
+*/
+
+extension String {
+    var alphanumeric: String {
+        return self.components(separatedBy: CharacterSet.alphanumerics.inverted).joined().lowercased()
     }
 }
 
