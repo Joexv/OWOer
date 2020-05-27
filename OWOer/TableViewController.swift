@@ -10,6 +10,7 @@ import UIKit
 import SwiftyStoreKit
 import NotificationBannerSwift
 
+//TODO: Convert this to load from a json for easier management
 class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -202,6 +203,51 @@ class TableViewController: UITableViewController {
     }
     @IBAction func clearButt(_ sender: Any) {
         display("Info", "If \"Delay message sending\" is enabled, the textbox in the iMessage app will be cleared after sending your converted text. Otherwise you will have to manually delete the old text.")
+    }
+    
+    let dispGroup = DispatchGroup()
+    @IBAction func updateEmojifier(_ sender: Any) {
+        dispGroup.enter()
+        let dlFile = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("emojis-Downloaded.json")
+        let dlURL = URL(string: "https://raw.githubusercontent.com/Joexv/OWOer/master/emojis-Download.json")
+        
+        var StatusCode: Int = 0
+        
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig)
+        let request = URLRequest(url: dlURL!)
+
+        try? FileManager.default.removeItem(at: dlFile)
+        
+        let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
+            if let tempLocalUrl = tempLocalUrl, error == nil {
+                if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+                    StatusCode = statusCode
+                    print("Status code: \(statusCode)")
+                }
+
+                if(FileManager.default.fileExists(atPath: tempLocalUrl.path)){
+                    do {
+                        try FileManager.default.copyItem(at: tempLocalUrl, to: dlFile)
+                    } catch (let writeError) {
+                        print("Error creating a file \(dlFile) : \(writeError)")
+                    }
+                }
+            } else {
+                print("Error took place while downloading a file. Error description: %@", error?.localizedDescription as Any);
+            }
+            self.dispGroup.leave()
+        }
+        task.resume()
+        
+        dispGroup.notify(queue: DispatchQueue.main){
+            switch StatusCode{
+                case 200:
+                        self.display("Completed!", "The updated Emoji mappings have been downloaded! Use the Emojifier as you normally would and enjoy new Emojis!")
+                default:
+                    self.display("Error Code: \(StatusCode)!", "Please check your internet connection and try again!")
+            }
+        }
     }
     
     func display(_ Title: String, _ Body: String){

@@ -160,11 +160,28 @@ open class EmojiMap_Mod {
     }
     
     
-    /// Search for the emoji JSON db in main or pod bundle
+    /// Search for the emoji JSON
     ///
     /// - Returns: returns a dictionary with the JSON content.
     func emojiDataBase_Mod() -> NSDictionary {
-        // Search for file in main bundle
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.owo")?.appendingPathComponent("emojis-Downloaded.json")
+        
+        let dlFile = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("emojis-Downloaded.json")
+        
+        //Gets file in documents folder
+        if(FileManager().fileExists(atPath: dlFile.path)){
+            let data = try? Data(contentsOf: dlFile)
+            let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+            return (json as? NSDictionary)!
+        }
+        
+        //Gets file via AppGroup
+        if(FileManager().fileExists(atPath: url!.path)){
+            let data = try? Data(contentsOf: url!)
+            let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+            return (json as? NSDictionary)!
+        }
+        
         if let file = Bundle.main.path(forResource: "emojis-OWO", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: file)),
             let json = try? JSONSerialization.jsonObject(with: data, options: []),
@@ -176,20 +193,6 @@ open class EmojiMap_Mod {
             return [:]
         }
     }
- 
-    
-    
-    /// Search for the emoji JSON db in main or pod bundle
-    ///
-    /// - Returns: returns a dictionary with the JSON content.
-    func emojiDataBase_2() -> NSDictionary {
-        // Search for file in main bundle
-        print(Bundle.main.bundlePath) 
-        let file = Bundle.main.path(forResource: "Emoji", ofType: "json")!
-        
-        let data = try? Data(contentsOf: URL(fileURLWithPath: file))
-        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-        return (json as? NSDictionary)!
-    }
+
 }
 

@@ -507,45 +507,6 @@ extension String {
 
 }
 
-/*
-class Emojifier{
-    var Max_Emojis_Per_Block = 2
-    let e = Emojis()
-    
-    func GenEmojiPasta(_ text: String) -> String{
-        let blocks: [String] = text.components(separatedBy: " ")
-        var newBlocks: [String] = []
-        
-        for item in blocks{
-            newBlocks.append(GenEmojiFromBlock(item))
-        }
-        
-        return newBlocks.joined(separator: " ")
-    }
-    
-    func GenEmojiFromBlock(_ block: String) -> String{
-        let trimmed = block.alphanumeric
-        var Emojis = getMatchingEmojis(trimmed)
-        
-        return block + " " + Emojis
-    }
-    
-    func getMatchingEmojis(_ word: String) -> String{
-        var results: String = ""
-        var key = word.lowercased()
-        if(e.Mappings[key] != nil){
-            let emojis = e.Mappings[key]
-            let numEmojis = (Int(arc4random_uniform(2)) * Max_Emojis_Per_Block)
-            for n in 1...numEmojis{
-                results += (emojis?.randomElement())!
-            }
-        }
-        
-        return results
-    }
-}
-*/
-
 extension String {
     var alphanumeric: String {
         return self.components(separatedBy: CharacterSet.alphanumerics.inverted).joined().lowercased()
