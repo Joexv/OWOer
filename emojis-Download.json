@@ -1,5 +1,5 @@
 {
-    "updatetime"{
+    "updatetime": {
         "keywords": ["imightberetarded"],
         "char": "5-27-2020"
     },
@@ -832,7 +832,7 @@
         "char": "🙇‍♀️"
     },
     "bowing_man": {
-        "keywords": ["man", "male", "boy", "sorry", "slave", "bow", ""],
+        "keywords": ["man", "male", "boy", "sorry", "slave", "bow"],
         "char": "🙇"
     },
     "man_facepalming": {

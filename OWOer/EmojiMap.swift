@@ -31,6 +31,7 @@ open class EmojiMap_Mod {
     lazy var mapping = self.defaultTextToEmojiMapping()
     
     public func GenEmojiPasta(_ text: String) -> String{
+        print("Generating Emojified text")
         let blocks: [String] = text.components(separatedBy: " ")
         var newBlocks: [String] = []
         
@@ -143,56 +144,48 @@ open class EmojiMap_Mod {
         return mapping
     }
     
+    //TODO make this not so ugly
     func emojiDataBase() -> NSDictionary {
-        if let path = Bundle.main.path(forResource: "emojis-OWO", ofType: "json") {
+        print("Getting Emoji DB")
+        let groupFile = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.owo")?.appendingPathComponent("emojis-Downloaded.json")
+        let dlFile = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("emojis-Downloaded.json")
+        
+        if let path = groupFile?.path {
             do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonDictionary = json as! NSDictionary
+                print("Using AppGroup JSON")
+                return jsonDictionary
+            } catch let error {
+                print("AppGroup parse error: \(error.localizedDescription)")
+            }
+        }else if FileManager().fileExists(atPath: dlFile.path) {
+            do {
+                let data = try Data(contentsOf: dlFile, options: .alwaysMapped)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonDictionary = json as! NSDictionary
+                print("Using Documents JSON")
+                return jsonDictionary
+            } catch let error {
+                print("Documents parse error: \(error.localizedDescription)")
+            }
+        }else if let path = Bundle.main.path(forResource: "emojis-OWO", ofType: "json") {
+            do {
+                print("Using Main Bundle JSON")
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 let jsonDictionary = json as! NSDictionary
                 return jsonDictionary
             } catch let error {
-                print("parse error: \(error.localizedDescription)")
+                print("Main Bundle parse error: \(error.localizedDescription)")
             }
         } else {
             print("Invalid filename/path.")
+            
         }
+        
         return [:]
     }
-    
-    
-    /// Search for the emoji JSON
-    ///
-    /// - Returns: returns a dictionary with the JSON content.
-    func emojiDataBase_Mod() -> NSDictionary {
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.owo")?.appendingPathComponent("emojis-Downloaded.json")
-        
-        let dlFile = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("emojis-Downloaded.json")
-        
-        //Gets file in documents folder
-        if(FileManager().fileExists(atPath: dlFile.path)){
-            let data = try? Data(contentsOf: dlFile)
-            let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-            return (json as? NSDictionary)!
-        }
-        
-        //Gets file via AppGroup
-        if(FileManager().fileExists(atPath: url!.path)){
-            let data = try? Data(contentsOf: url!)
-            let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-            return (json as? NSDictionary)!
-        }
-        
-        if let file = Bundle.main.path(forResource: "emojis-OWO", ofType: "json"),
-            let data = try? Data(contentsOf: URL(fileURLWithPath: file)),
-            let json = try? JSONSerialization.jsonObject(with: data, options: []),
-            let jsonDictionary = json as? NSDictionary {
-            print("Got json from main folder")
-                return jsonDictionary
-        }else{
-            print("fuck")
-            return [:]
-        }
-    }
-
 }
 
