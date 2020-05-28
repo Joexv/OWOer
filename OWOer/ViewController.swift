@@ -58,6 +58,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         super.viewDidAppear(true)
         RemoveAds()
         TextBox_2.autocorrectionType = defaults.bool(forKey: "spellCheck") ? .yes : .no
+        
+        if(!defaults.bool(forKey: "Update112")){
+            display("Update 1.1.2", "Adjustments to MegaUWU\n" +
+            "Added more emoji mappings to Emojifier\n" +
+            "Added update button for Emojifier\n" +
+            "UwU what's this in the settings?\n" +
+            "Some under the hood improvements\n")
+            
+            defaults.set(true, forKey: "Update112")
+        }
     }
     
     override func loadView() {
@@ -78,6 +88,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         NBQ.removeAll()
         let banner = NotificationBanner(title: Title, subtitle: Text, style: (Error ? BannerStyle.danger : BannerStyle.success))
         banner.show(queue: NBQ)
+    }
+    
+    func display(_ Title: String, _ Body: String){
+        let alert = UIAlertController(title: Title, message: Body, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func Clipboard(_ Text: String){
@@ -105,7 +121,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         TextBox_2.text = o.fontChanger((styleDropDown.selectedIndex ?? 0) as Int, TextBox_2.text, Zalgo: Int(zalgoSlider.value))
         
         convertCount += 1
-        if(convertCount > adNum && !defaults.bool(forKey: "Ad_Removal")){
+        if(convertCount > adNum && !defaults.bool(forKey: "Ad_Removal") && !defaults.bool(forKey: "DisableAds")){
             if interstitial.isReady {
                 interstitial.present(fromRootViewController: self)
                 convertCount = 0
@@ -148,7 +164,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         if(defaults.bool(forKey: "Ad_Removal")){
             bannerView.removeFromSuperview()
             bannerView.isHidden = true
+            defaults.set(true, forKey: "Unlocked")
             group?.set(true, forKey: "Unlocked")
+        }else if(defaults.bool(forKey: "DisableAds")){
+            bannerView.removeFromSuperview()
+            bannerView.isHidden = true
         }else{
             bannerView.isHidden = false
             bannerView.rootViewController = self
@@ -160,6 +180,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         #if DEBUG
         bannerView.removeFromSuperview()
         bannerView.isHidden = true
+        defaults.set(true, forKey: "Unlocked")
         group?.set(true, forKey: "Unlocked")
         #endif
     }

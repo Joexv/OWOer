@@ -32,6 +32,7 @@
 		3049EB1A22D3C12000979962 /* TextFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049EB1822D3BC2600979962 /* TextFunctions.swift */; };
 		305E331422D6627800C5D13B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305E331322D6627800C5D13B /* Media.xcassets */; };
 		306E20B622D67EA900B285DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A2FB8B229131C300B7BF89 /* Assets.xcassets */; };
+		3086BDE8247F334D00D6338B /* UWU.png in Resources */ = {isa = PBXBuildFile; fileRef = 3086BDE7247F334D00D6338B /* UWU.png */; };
 		3096462222D04AD900810E27 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3096462122D04AD900810E27 /* MainInterface.storyboard */; };
 		3099BCA722D043BB00182E4F /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3012FAF222D031170057D82B /* Messages.framework */; };
 		3099BCB322D043BC00182E4F /* ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3099BCA622D043BB00182E4F /* ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -116,6 +117,7 @@
 		3049EB1722D3BAA200979962 /* extDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = extDebug.entitlements; sourceTree = "<group>"; };
 		3049EB1822D3BC2600979962 /* TextFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFunctions.swift; sourceTree = "<group>"; };
 		305E331322D6627800C5D13B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		3086BDE7247F334D00D6338B /* UWU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UWU.png; sourceTree = "<group>"; };
 		3096462122D04AD900810E27 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		3096462722D04FEB00810E27 /* OWOerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OWOerDebug.entitlements; sourceTree = "<group>"; };
 		3099BCA622D043BB00182E4F /* ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ext.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +245,7 @@
 				30A2FB86229131C300B7BF89 /* ViewController.swift */,
 				30A2FB88229131C300B7BF89 /* Main.storyboard */,
 				30A2FB8B229131C300B7BF89 /* Assets.xcassets */,
+				3086BDE7247F334D00D6338B /* UWU.png */,
 				30A2FB8D229131C300B7BF89 /* LaunchScreen.storyboard */,
 				30A2FB90229131C300B7BF89 /* Info.plist */,
 				3012FACF22D004E90057D82B /* TableViewController.swift */,
@@ -420,6 +423,7 @@
 			files = (
 				30D21A4024776DE700E293BE /* emojis-OWO.json in Resources */,
 				30A2FB8F229131C300B7BF89 /* LaunchScreen.storyboard in Resources */,
+				3086BDE8247F334D00D6338B /* UWU.png in Resources */,
 				30A2FB8C229131C300B7BF89 /* Assets.xcassets in Resources */,
 				30A2FB8A229131C300B7BF89 /* Main.storyboard in Resources */,
 			);
@@ -610,7 +614,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OWOard/OWOard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -637,7 +641,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OWOard/OWOard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -664,7 +668,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ext/extDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = ext/Media.xcassets;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
@@ -693,7 +697,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ext/extRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = ext/Media.xcassets;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
@@ -840,7 +844,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OWOer/OWOerDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -865,7 +869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OWOer/OWOerRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -31,15 +31,19 @@ open class EmojiMap_Mod {
     lazy var mapping = self.defaultTextToEmojiMapping()
     
     public func GenEmojiPasta(_ text: String) -> String{
+        let maxEmoji: UInt32 = UInt32(group?.double(forKey: "MaxEmoji") ?? 3)
         print("Generating Emojified text")
-        let blocks: [String] = text.components(separatedBy: " ")
+        var blocks: [String] = text.components(separatedBy: " ")
+        if(blocks.isEmpty){
+            blocks.append(text)
+        }
         var newBlocks: [String] = []
         
         for item in blocks{
             let word = (item.alphanumeric).lowercased()
             if let matches = mapping[word] {
                 var Emojis: String = ""
-                for _ in 0...(arc4random_uniform(3)){
+                for _ in 0...(arc4random_uniform(maxEmoji)){
                     let rndInt = Int(arc4random_uniform(UInt32(matches.count - 1)))
                     let match = Match(string: word, emoji: matches[rndInt])
                     Emojis += "\(match.emoji)"
@@ -144,23 +148,13 @@ open class EmojiMap_Mod {
         return mapping
     }
     
+    let group = UserDefaults.init(suiteName: "group.OWO")
     //TODO make this not so ugly
     func emojiDataBase() -> NSDictionary {
         print("Getting Emoji DB")
-        let groupFile = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.owo")?.appendingPathComponent("emojis-Downloaded.json")
         let dlFile = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("emojis-Downloaded.json")
         
-        if let path = groupFile?.path {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                let jsonDictionary = json as! NSDictionary
-                print("Using AppGroup JSON")
-                return jsonDictionary
-            } catch let error {
-                print("AppGroup parse error: \(error.localizedDescription)")
-            }
-        }else if FileManager().fileExists(atPath: dlFile.path) {
+        if FileManager().fileExists(atPath: dlFile.path) {
             do {
                 let data = try Data(contentsOf: dlFile, options: .alwaysMapped)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -170,6 +164,9 @@ open class EmojiMap_Mod {
             } catch let error {
                 print("Documents parse error: \(error.localizedDescription)")
             }
+        }else if !((group?.dictionary(forKey: "EmojiDic") ?? [:]).isEmpty) {
+            print("Using Group Plist")
+            return (group?.dictionary(forKey: "EmojiDic"))! as NSDictionary
         }else if let path = Bundle.main.path(forResource: "emojis-OWO", ofType: "json") {
             do {
                 print("Using Main Bundle JSON")

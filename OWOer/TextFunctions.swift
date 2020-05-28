@@ -141,11 +141,17 @@ class owo{
         return results
     }
     
-    let mOWO: [String] = [" *nuzzles* ", " *pounces* ", "", " uwu ", " owo ", " :3 ", " ^^; "]
+    let mOWO: [String] = [" *nuzzles* ", " *pounces* ", "", " uwu ", " owo ", " :3 ", " ^^; ", " *nom* ", " *nibbles*", " UwU ", " OwO ", " VwV ", " QwQ ", " >w>", " *notices something* "]
+    let wOWO: [String : String] = ["cock" : "cockie-wockie", "buldge" : "buldgie-wuldgie", "hard" : "mega-duper-hawd", "super" : "super-duper", "rainbow" : "rainbuwu", "I love you" : "Rawr❤️", "hungry":"hunggies", "hunger":"hunggies", "please":"p-pwease", "snake":"snek", "oh no":"ono", "brother":"onii-san", "sister":"onee-san", "baby":"babbie", "only":"onwie"]
+    
     func Mega_OWO(_ Text: String) -> String{
         var results: String = Text
+        for word in wOWO.keys{
+            results = results.replacingOccurrences(of: word, with: wOWO[word] ?? word, options: [.caseInsensitive])
+        }
+        
         for text in uwu.keys{
-            results = results.replacingOccurrences(of: text, with: uwu[text]!)
+            results = results.replacingOccurrences(of: text, with: uwu[text] ?? text)
         }
         
         var count: Int = 0
@@ -157,6 +163,7 @@ class owo{
             }
             count += 1
         }
+
         return results
     }
     
@@ -179,7 +186,7 @@ class owo{
     func OWO(_ Text: String, _ UWU:[String:String]) -> String{
         var results: String = Text
         for text in UWU.keys{
-            results = results.replacingOccurrences(of: text, with: UWU[text]!)
+            results = results.replacingOccurrences(of: text, with: UWU[text] ?? text)
         }
         return results
     }
@@ -242,6 +249,9 @@ class owo{
         "have": "haz",
         "you": "uu",
         "the ": "da ",
+        "y ":"ie ",
+        "waww":"rawr", //Added these two to make sure that these fucking degenerates can rawr
+        "Waww":"Rawr"
     ]
     
     let doubleStack: [String: String] = [

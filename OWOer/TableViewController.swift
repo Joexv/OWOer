@@ -12,7 +12,8 @@ import NotificationBannerSwift
 
 //TODO: Convert this to load from a json for easier management
 class TableViewController: UITableViewController {
-
+    let group = UserDefaults.init(suiteName: "group.OWO")
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,9 @@ class TableViewController: UITableViewController {
             defaults.set(false, forKey: "sendDelay")
         }
         
+        maxEmoji_Step.value = defaults.double(forKey: "MaxEmoji")
+        maxEmoji.text = "Maximum Emojis: \(maxEmoji_Step.value)"
+        
         zalgoSwitch.isOn = defaults.bool(forKey: "zalgoAlways")
         clapperBoi.isOn = defaults.bool(forKey: "iGotTheClaps")
         clearSwitch.isOn = defaults.bool(forKey: "delaySend")
@@ -34,6 +38,8 @@ class TableViewController: UITableViewController {
         spellSwitch.isOn = defaults.bool(forKey: "spellCheck")
         
         heartSwitch.isOn = defaults.bool(forKey: "hearts")
+        
+        adDisabler.isOn = defaults.bool(forKey: "DisableAds")
         
         if(defaults.bool(forKey: "Ad_Removal")){
             adButt.titleLabel?.text = "Thank you for supporting us!"
@@ -74,7 +80,7 @@ class TableViewController: UITableViewController {
         let banner = NotificationBanner(title: Title, subtitle: Text, style: (Error ? BannerStyle.danger : BannerStyle.success))
         banner.show(queue: NBQ)
     }
-    let group = UserDefaults.init(suiteName: "group.OWO")
+    
     @IBAction func removeAdButt(_ sender: Any) {
         if(!(group?.bool(forKey: "Unlocked") ?? false)){
             BuyProd()
@@ -103,8 +109,6 @@ class TableViewController: UITableViewController {
             }
         }
     }
-    
-    let defaults = UserDefaults.standard
     
     func BuyProd(){
         SwiftyStoreKit.purchaseProduct("Ad_Removal", quantity: 1, atomically: true) { result in
@@ -204,6 +208,26 @@ class TableViewController: UITableViewController {
     @IBAction func clearButt(_ sender: Any) {
         display("Info", "If \"Delay message sending\" is enabled, the textbox in the iMessage app will be cleared after sending your converted text. Otherwise you will have to manually delete the old text.")
     }
+    @IBAction func maxEmojiButt(_ sender: Any) {
+        display("Info", "Set the maximum amount of emojis to generate when using the \"Emojifier\" adjustment. Default is 3")
+    }
+    @IBAction func disableAdButt(_ sender: Any) {
+        display("Info", "We get it ads suck. So to show our grattitude to our users you can now disable ads for free! This won't unlock the iMessage Extension or the keyboard, but it will allow you to use the main app in peace.")
+    }
+    
+    @IBOutlet weak var adDisabler: UISwitch!
+    @IBAction func disableAds(_ sender: Any) {
+        defaults.set(adDisabler.isOn, forKey: "DisableAds")
+    }
+    
+    
+    @IBAction func maxEmoji_Stepper(_ sender: Any) {
+        maxEmoji.text = "Maximum Emojis: \(maxEmoji_Step.value)"
+        defaults.set(maxEmoji_Step.value, forKey: "MaxEmoji")
+        group?.set(maxEmoji_Step.value, forKey: "MaxEmoji")
+    }
+    @IBOutlet weak var maxEmoji_Step: UIStepper!
+    @IBOutlet weak var maxEmoji: UILabel!
     
     let dispGroup = DispatchGroup()
     @IBAction func updateEmojifier(_ sender: Any) {
@@ -243,10 +267,21 @@ class TableViewController: UITableViewController {
         dispGroup.notify(queue: DispatchQueue.main){
             switch StatusCode{
                 case 200:
-                        self.display("Completed!", "The updated Emoji mappings have been downloaded! Use the Emojifier as you normally would and enjoy new Emojis!")
+                        self.display("Completed!", "The updated Emoji mappings have been downloaded! Restart the app and then use Emojifier as you normally would!")
+                        self.saveToGroup(path: dlFile)
                 default:
                     self.display("Error Code: \(StatusCode)!", "Please check your internet connection and try again!")
             }
+        }
+    }
+    
+    func saveToGroup(path: URL){
+        do {
+            let data = try Data(contentsOf: path, options: .alwaysMapped)
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            group?.set(json, forKey: "EmojiDic")
+        }catch let error {
+            print("Error saving to group \(error)")
         }
     }
     
