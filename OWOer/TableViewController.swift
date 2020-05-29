@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyStoreKit
 import NotificationBannerSwift
+import iOSDropDown
 
 //TODO: Convert this to load from a json for easier management
 class TableViewController: UITableViewController {
@@ -26,8 +27,8 @@ class TableViewController: UITableViewController {
             defaults.set(false, forKey: "sendDelay")
         }
         
-        maxEmoji_Step.value = defaults.double(forKey: "MaxEmoji")
-        maxEmoji.text = "Maximum Emojis: \(maxEmoji_Step.value)"
+        maxEmoji_Step.value = defaults.double(forKey: "MaxEmoji").rounded()
+        maxEmoji.text = "Maximum Emojis: \(Int(maxEmoji_Step.value.rounded()))"
         
         zalgoSwitch.isOn = defaults.bool(forKey: "zalgoAlways")
         clapperBoi.isOn = defaults.bool(forKey: "iGotTheClaps")
@@ -45,7 +46,46 @@ class TableViewController: UITableViewController {
             adButt.titleLabel?.text = "Thank you for supporting us!"
             adButt.isEnabled = false
         }
+        
+        PitchStepper.value = defaults.double(forKey: "Pitch")
+        RateStepper.value = defaults.double(forKey: "Rate")
+        RateLabel.text = "\(RateStepper.value / 10)"
+        PitchLabel.text = "\(PitchStepper.value / 10)"
+        
+        SpeakSwitcher.isOn = defaults.bool(forKey: "SpeakEmojis")
+        print(OSSVoiceEnum.allCases)
+    
+        for word in OSSVoiceEnum.allCases{
+            VoiceDropDown.optionArray.append(word.rawValue)
+        }
+        
+        VoiceDropDown.placeholder = defaults.string(forKey: "VoiceLanguage") ?? "en-US"
+        
+        VoiceDropDown.listDidDisappear {
+            self.defaults.set(self.VoiceDropDown.text, forKey: "VoiceLanguage")
+        }
     }
+    @IBAction func Rate_Change(_ sender: Any) {
+        RateLabel.text = "\(RateStepper.value / 10)"
+        defaults.set(RateStepper.value, forKey: "Rate")
+    }
+ 
+    @IBOutlet weak var RateStepper: UIStepper!
+    @IBOutlet weak var PitchStepper: UIStepper!
+    @IBAction func Pitch_Change(_ sender: Any) {
+        PitchLabel.text = "\(PitchStepper.value / 10)"
+        defaults.set(PitchStepper.value, forKey: "Pitch")
+    }
+    
+    @IBOutlet weak var VoiceDropDown: DropDown!
+    
+    @IBOutlet weak var SpeakSwitcher: UISwitch!
+    @IBAction func Speak_Switch(_ sender: Any) {
+        defaults.set(SpeakSwitcher.isOn, forKey: "SpeakEmojis")
+    }
+
+    @IBOutlet weak var RateLabel: UILabel!
+    @IBOutlet weak var PitchLabel: UILabel!
     
     @IBAction func reportButton(_ sender: Any) {
         if let url = URL(string: "https://www.github.com/joexv/OWOer/issues/new") {
@@ -222,7 +262,7 @@ class TableViewController: UITableViewController {
     
     
     @IBAction func maxEmoji_Stepper(_ sender: Any) {
-        maxEmoji.text = "Maximum Emojis: \(maxEmoji_Step.value)"
+        maxEmoji.text = "Maximum Emojis: \(Int(maxEmoji_Step.value))"
         defaults.set(maxEmoji_Step.value, forKey: "MaxEmoji")
         group?.set(maxEmoji_Step.value, forKey: "MaxEmoji")
     }

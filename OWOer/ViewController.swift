@@ -14,8 +14,9 @@ import PersonalizedAdConsent
 import SwiftyStoreKit
 import AdSupport
 import iOSDropDown
+import AVFoundation
 
-class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, AVSpeechSynthesizerDelegate {
     let o = owo()
     var bannerView: GADBannerView!
     var interstitial: GADInterstitial!
@@ -38,9 +39,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             }
         }
     }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        speachButt.setTitle("Speak Text", for: .highlighted)
+        speachButt.setTitle("Speak Text", for: .normal)
+        speachButt.setTitle("Speak Text", for: .selected)
+        print("FINISHED")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        synth.delegate = self
         // Do any additional setup after loading the view.
         TextBox_2.layer.borderWidth = 1
         TextBox_2.layer.borderColor = UIColor.purple.cgColor
@@ -67,6 +76,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             "Some under the hood improvements\n")
             
             defaults.set(true, forKey: "Update112")
+            defaults.set(12, forKey: "Pitch")
+            defaults.set(5, forKey: "Rate")
+            defaults.set(OSSVoiceEnum.UnitedStatesEnglish.rawValue, forKey: "VoiceLanguage")
         }
     }
     
@@ -220,6 +232,46 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     }
     
     @IBOutlet weak var optionsDropDown: DropDown!
+    
+    @IBOutlet weak var speachButt: UIButton!
+    let synth = AVSpeechSynthesizer()
+    let newVoice = OSSVoice()
+    
+    func setupUtterance() -> AVSpeechUtterance{
+        newVoice.language = defaults.string(forKey: "VoiceLanguage") ?? "en-US"
+        newVoice.quality = .enhanced
+        var StringToRead: String = TextBox_2.text ?? "OWO"
+        if(!defaults.bool(forKey: "SpeakEmojis")){
+            //StringToRead = StringToRead.removeEmojis()
+            StringToRead = StringToRead.components(separatedBy: .symbols).joined()
+            print(StringToRead)
+        }
+        let utterance = AVSpeechUtterance(string: StringToRead)
+        utterance.rate = Float(defaults.double(forKey: "Rate") / 10)
+        print(AVSpeechUtteranceDefaultSpeechRate)
+        utterance.volume = 0.7
+        utterance.pitchMultiplier = Float(defaults.double(forKey: "Pitch") / 10)
+        utterance.voice = newVoice
+        return utterance
+    }
+    
+    @IBAction func speakTextButt(_ sender: Any) {
+        let utterance = setupUtterance()
+        if(!synth.isSpeaking){
+            synth.speak(utterance)
+            speachButt.setTitle("Stop Speech", for: .highlighted)
+            speachButt.setTitle("Stop Speech", for: .normal)
+            speachButt.setTitle("Stop Speech", for: .selected)
+        }else{
+            synth.stopSpeaking(at: .immediate)
+            speachButt.setTitle("Speak Text", for: .highlighted)
+            speachButt.setTitle("Speak Text", for: .normal)
+            speachButt.setTitle("Speak Text", for: .selected)
+        }
+    }
+    
+    
+
 }
 
 extension UITextView{

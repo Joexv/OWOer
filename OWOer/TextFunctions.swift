@@ -503,6 +503,17 @@ extension Gen {
     }
 }
 
+extension Character {
+  fileprivate func isEmoji() -> Bool {
+    return Character(UnicodeScalar(UInt32(0x1f600))!) <= self && self <= Character(UnicodeScalar(UInt32(0x1F64F))!)
+      || Character(UnicodeScalar(UInt32(0x1F300))!) <= self && self <= Character(UnicodeScalar(UInt32(0x1F5FF))!)
+    || Character(UnicodeScalar(UInt32(0x1F680))!) <= self && self <= Character(UnicodeScalar(UInt32(0x1F6FF))!)
+        || Character(UnicodeScalar(UInt32(0x2702))!) <= self && self <= Character(UnicodeScalar(UInt32(0x27B0))!)
+        || Character(UnicodeScalar(UInt32(0x1F1E0))!) <= self && self <= Character(UnicodeScalar(UInt32(0x1F1FF))!)
+    || Character(UnicodeScalar(UInt32(0x2000))!) <= self && self <= Character(UnicodeScalar(UInt32(0x1F251))!)
+  }
+}
+
 extension String {
     subscript (index: Int) -> String.Index {
         let charIndex = self.index(self.startIndex, offsetBy: index)
@@ -514,10 +525,11 @@ extension String {
         let stopIndex = self.index(self.startIndex, offsetBy: range.startIndex + range.count)
         return self[startIndex..<stopIndex]
     }
-
-}
-
-extension String {
+    
+    func removeEmojis() -> String {
+      return String(self.filter { !$0.isEmoji() })
+    }
+    
     var alphanumeric: String {
         return self.components(separatedBy: CharacterSet.alphanumerics.inverted).joined().lowercased()
     }
