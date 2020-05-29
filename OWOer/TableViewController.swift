@@ -55,10 +55,13 @@ class TableViewController: UITableViewController {
         SpeakSwitcher.isOn = defaults.bool(forKey: "SpeakEmojis")
         print(OSSVoiceEnum.allCases)
     
+        var LangStrings: [String] = []
         for word in OSSVoiceEnum.allCases{
-            VoiceDropDown.optionArray.append(word.rawValue)
+            LangStrings.append("(\(word)) " + word.rawValue)
         }
+        LangStrings.sort()
         
+        VoiceDropDown.optionArray = LangStrings
         VoiceDropDown.placeholder = defaults.string(forKey: "VoiceLanguage") ?? "en-US"
         
         VoiceDropDown.listDidDisappear {

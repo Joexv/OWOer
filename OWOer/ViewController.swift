@@ -73,7 +73,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
             "Added more emoji mappings to Emojifier\n" +
             "Added update button for Emojifier\n" +
             "UwU what's this in the settings?\n" +
-            "Some under the hood improvements\n")
+            "Some under the hood improvements\n" +
+            "Added Text To Speech for converted text")
             
             defaults.set(true, forKey: "Update112")
             defaults.set(12, forKey: "Pitch")
@@ -238,7 +239,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     let newVoice = OSSVoice()
     
     func setupUtterance() -> AVSpeechUtterance{
-        newVoice.language = defaults.string(forKey: "VoiceLanguage") ?? "en-US"
+        let Lang: String = (defaults.string(forKey: "VoiceLanguage") ?? "en-US").replacingOccurrences(of: "\\s?\\([\\w\\s]*\\)", with: "", options: .regularExpression).replacingOccurrences(of: " ", with: "")
+        print(Lang)
+        newVoice.language = Lang
         newVoice.quality = .enhanced
         var StringToRead: String = TextBox_2.text ?? "OWO"
         if(!defaults.bool(forKey: "SpeakEmojis")){

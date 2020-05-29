@@ -32,6 +32,9 @@
 		3049EB1A22D3C12000979962 /* TextFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049EB1822D3BC2600979962 /* TextFunctions.swift */; };
 		305E331422D6627800C5D13B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305E331322D6627800C5D13B /* Media.xcassets */; };
 		306520E424808EBD0096FA36 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306520E324808EBD0096FA36 /* TTS.swift */; };
+		306520E52480B8C60096FA36 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306520E324808EBD0096FA36 /* TTS.swift */; };
+		306520E62480B8C70096FA36 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306520E324808EBD0096FA36 /* TTS.swift */; };
+		306520E72480BEA90096FA36 /* Pods_OWOer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBB787E845CEA6B7AD3B8DE /* Pods_OWOer.framework */; };
 		306E20B622D67EA900B285DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A2FB8B229131C300B7BF89 /* Assets.xcassets */; };
 		3086BDE8247F334D00D6338B /* UWU.png in Resources */ = {isa = PBXBuildFile; fileRef = 3086BDE7247F334D00D6338B /* UWU.png */; };
 		3096462222D04AD900810E27 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3096462122D04AD900810E27 /* MainInterface.storyboard */; };
@@ -50,7 +53,6 @@
 		30D21A3F2476F5A000E293BE /* EmojiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9F924764FAF0022B227 /* EmojiMap.swift */; };
 		30D21A4024776DE700E293BE /* emojis-OWO.json in Resources */ = {isa = PBXBuildFile; fileRef = 30D21A3A2476F32F00E293BE /* emojis-OWO.json */; };
 		4CAB0AF754530E096BE1FD23 /* Pods_ext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3AB6BA5F3EACAE55CB5E15 /* Pods_ext.framework */; };
-		52811BE1EA8A7E141CA77FF4 /* Pods_OWOer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBB787E845CEA6B7AD3B8DE /* Pods_OWOer.framework */; };
 		59CEDF2291E8DB0C5FA58F3E /* Pods_OWOard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BD51FF38A544665824C00A /* Pods_OWOard.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52811BE1EA8A7E141CA77FF4 /* Pods_OWOer.framework in Frameworks */,
+				306520E72480BEA90096FA36 /* Pods_OWOer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +547,7 @@
 				303949842398CCD5005BAAA1 /* KeyboardConnector.swift in Sources */,
 				3039498D2398CCD5005BAAA1 /* DefaultKeyboard.swift in Sources */,
 				3039498F2398CCD5005BAAA1 /* Shapes.swift in Sources */,
+				306520E62480B8C70096FA36 /* TTS.swift in Sources */,
 				303949942398CCD5005BAAA1 /* KeyboardViewController.swift in Sources */,
 				303949952398CCD5005BAAA1 /* KeyboardLayout.swift in Sources */,
 				303949972398CCD5005BAAA1 /* KeyboardKeyBackground.swift in Sources */,
@@ -559,6 +562,7 @@
 				3049EB1A22D3C12000979962 /* TextFunctions.swift in Sources */,
 				30D21A29247653D000E293BE /* EmojiMap.swift in Sources */,
 				3099BCB922D044E800182E4F /* MessagesViewController.swift in Sources */,
+				306520E52480B8C60096FA36 /* TTS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,10 +622,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OWOard/OWOard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,10 +649,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OWOard/OWOard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,12 +677,12 @@
 				CODE_SIGN_ENTITLEMENTS = ext/extDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = ext/Media.xcassets;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = ext/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,12 +707,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ext/extRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = ext/Media.xcassets;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = ext/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -850,10 +854,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OWOer/OWOerDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -875,10 +879,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OWOer/OWOerRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6BB42LR4PM;
 				INFOPLIST_FILE = OWOer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
