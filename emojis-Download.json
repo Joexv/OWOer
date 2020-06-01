@@ -1,7 +1,7 @@
 {
     "updatetime": {
         "keywords": ["imightberetarded"],
-        "char": "5-28-2020"
+        "char": "6-1-2020"
     },
     "joe": {
         "keywords": ["manmadeofgouda", "oliveira", "joseph"],
@@ -96,11 +96,11 @@
         "char": "😚"
     },
     "stuck_out_tongue_winking_eye": {
-        "keywords": ["face", "prank", "childish", "playful", "mischievous", "smile", "wink", "tongue", "cutie", "kinky", "emojis"],
+        "keywords": ["face", "prank", "childish", "playful", "mischievous", "smile", "wink", "tongue", "cutie", "kinky", "emojis", "whore", "ewhore", "thot", "ethot"],
         "char": "😜"
     },
     "stuck_out_tongue_closed_eyes": {
-        "keywords": ["face", "prank", "playful", "mischievous", "smile", "tongue", "kinky", "emojis"],
+        "keywords": ["face", "prank", "playful", "mischievous", "smile", "tongue", "kinky", "emojis", "freaking", "whore", "ewhore", "thot", "ethot"],
         "char": "😝"
     },
     "stuck_out_tongue": {
@@ -132,7 +132,7 @@
         "char": "🤗"
     },
     "smirk": {
-        "keywords": ["face", "smile", "mean", "prank", "smug", "sarcasm", "daddy", "sex", "kinky", "emojis"],
+        "keywords": ["face", "smile", "mean", "prank", "smug", "sarcasm", "daddy", "sex", "kinky", "emojis", "whore", "ewhore", "thot", "ethot"],
         "char": "😏"
     },
     "no_mouth": {
@@ -140,7 +140,7 @@
         "char": "😶"
     },
     "neutral_face": {
-        "keywords": ["indifference", "meh", ":|", "neutral", "emojis"],
+        "keywords": ["indifference", "meh", ":|", "neutral", "emojis", "sorry"],
         "char": "😐"
     },
     "expressionless": {
@@ -164,7 +164,7 @@
         "char": "🤥"
     },
     "flushed": {
-        "keywords": ["face", "blush", "shy", "flattered", "unless", "kinky", "pleasure", "emojis"],
+        "keywords": ["face", "blush", "shy", "flattered", "unless", "kinky", "pleasure", "emojis", "whore", "ewhore", "thot", "ethot"],
         "char": "😳"
     },
     "disappointed": {
@@ -180,7 +180,7 @@
         "char": "😠"
     },
     "rage": {
-        "keywords": ["angry", "mad", "hate", "despise", "anger", "emojis"],
+        "keywords": ["angry", "mad", "hate", "despise", "anger", "emojis", "worst"],
         "char": "😡"
     },
     "pensive": {
@@ -188,11 +188,11 @@
         "char": "😔"
     },
     "confused": {
-        "keywords": ["face", "indifference", "huh", "weird", "hmmm", ":/", "emojis"],
+        "keywords": ["face", "indifference", "huh", "weird", "hmmm", ":/", "emojis", "insecure"],
         "char": "😕"
     },
     "slightly_frowning_face": {
-        "keywords": ["face", "frowning", "disappointed", "sad", "upset", "emojis"],
+        "keywords": ["face", "frowning", "disappointed", "sad", "upset", "emojis", "insecure"],
         "char": "🙁"
     },
     "frowning_face": {
@@ -200,7 +200,7 @@
         "char": "☹"
     },
     "persevere": {
-        "keywords": ["face", "sick", "no", "upset", "oops", "emojis"],
+        "keywords": ["face", "sick", "no", "upset", "oops", "emojis", "ugh", "insecure"],
         "char": "😣"
     },
     "confounded": {
@@ -208,11 +208,11 @@
         "char": "😖"
     },
     "tired_face": {
-        "keywords": ["sick", "whine", "upset", "frustrated", "cummies", "cum", "daddy", "pleasure", "emojis"],
+        "keywords": ["sick", "whine", "upset", "frustrated", "cummies", "cum", "daddy", "pleasure", "emojis", "agony"],
         "char": "😫"
     },
     "weary": {
-        "keywords": ["face", "tired", "sleepy", "sad", "frustrated", "upset", "cummies", "cum", "daddy", "kinky", "pleasure", "emojis"],
+        "keywords": ["face", "tired", "sleepy", "sad", "frustrated", "upset", "cummies", "cum", "daddy", "kinky", "pleasure", "emojis", "cumgeons", "cummendations"],
         "char": "😩"
     },
     "triumph": {
@@ -264,7 +264,7 @@
         "char": "😪"
     },
     "sweat": {
-        "keywords": ["face", "hot", "sad", "tired", "exercise", "emojis"],
+        "keywords": ["face", "hot", "sad", "tired", "exercise", "emojis", "much"],
         "char": "😓"
     },
     "sob": {
@@ -311,12 +311,24 @@
         "keywords": ["face", "tired", "sleepy", "night", "zzz", "emojis"],
         "char": "😴"
     },
+    "crazy": {
+        "keywords": ["freaking", "freak", "weird", "quirky", "tipsy", "loon", "loony", "loonie", "looney", "vibe"],
+        "char": "🤪"
+    },
+    "silent": {
+        "keywords": ["hes", "oops", "oopsie", "whoops", "shock", "awe"],
+        "char": "🤭"
+    },
+    "swearing": {
+        "keywords": ["hatred", "fucking", "swear", "anger", "fuck"],
+        "char": "🤬"
+    },
     "zzz": {
         "keywords": ["sleepy", "tired", "dream", "emojis"],
         "char": "💤"
     },
     "poop": {
-        "keywords": ["hankey", "shitface", "fail", "turd", "shit", "emojis"],
+        "keywords": ["hankey", "shitface", "fail", "turd", "shit", "emojis", "shitbag"],
         "char": "💩"
     },
     "smiling_imp": {
@@ -396,7 +408,7 @@
         "char": "👏"
     },
     "wave": {
-        "keywords": ["hands", "gesture", "goodbye", "solong", "farewell", "hello", "hi", "palm", "hey", "bye", "leave", "emojis"],
+        "keywords": ["hands", "gesture", "goodbye", "solong", "farewell", "hello", "hi", "palm", "hey", "bye", "leave", "emojis", "pass"],
         "char": "👋"
     },
     "call_me_hand": {
@@ -408,7 +420,7 @@
         "char": "👍"
     },
     "-1": {
-        "keywords": ["thumbsdown", "no", "dislike", "hand", "bad", "emojis"],
+        "keywords": ["thumbsdown", "no", "dislike", "hand", "bad", "emojis", "none", "downvote", "deleted"],
         "char": "👎"
     },
     "facepunch": {
@@ -428,15 +440,15 @@
         "char": "🤜"
     },
     "v": {
-        "keywords": ["fingers", "ohyeah", "hand", "peace", "victory", "two", "emojis"],
+        "keywords": ["fingers", "ohyeah", "hand", "peace", "victory", "two", "emojis", "vibe"],
         "char": "✌"
     },
     "ok_hand": {
-        "keywords": ["fingers", "limbs", "perfect", "ok", "okay", "sex", "pussy", "vagina", "hole", "emojis"],
+        "keywords": ["fingers", "limbs", "perfect", "ok", "okay", "sex", "pussy", "vagina", "hole", "emojis", "vibe", "fine"],
         "char": "👌"
     },
     "raised_hand": {
-        "keywords": ["fingers", "stop", "highfive", "palm", "ban", "i", "me", "mine", "hello", "heil", "emojis"],
+        "keywords": ["fingers", "stop", "highfive", "palm", "ban", "i", "me", "mine", "hello", "heil", "emojis", "spank", "pass"],
         "char": "✋"
     },
     "raised_back_of_hand": {
@@ -468,8 +480,12 @@
         "char": "👆"
     },
     "point_down": {
-        "keywords": ["fingers", "hand", "direction", "down", "stay", "emojis"],
+        "keywords": ["fingers", "hand", "direction", "down", "stay", "emojis", "this"],
         "char": "👇"
+    },
+    "otherkin": {
+        "keywords": ["furries],
+        "char": "🦖🦄🐱🐌🐁✨"
     },
     "point_left": {
         "keywords": ["direction", "fingers", "hand", "left", "this", "that", "emojis"],
@@ -515,8 +531,12 @@
         "keywords": ["mouth", "kiss", "oral", "succ", "mmmm", "emojis"],
         "char": "👄"
     },
+    "touch": {
+        "keywords": ["anyways", "maybe", "umm", "whatif"],
+        "char": "👉👈"
+    },
     "tongue": {
-        "keywords": ["mouth", "playful", "tongue", "oral", "suck", "zucc", "zuck", "succ", "pussy", "lick", "emojis"],
+        "keywords": ["mouth", "playful", "tongue", "oral", "suck", "zucc", "zuck", "succ", "pussy", "lick", "emojis", "rimming", "cocksucking"],
         "char": "👅"
     },
     "ear": {
@@ -524,7 +544,7 @@
         "char": "👂"
     },
     "nose": {
-        "keywords": ["smell", "sniff", "whiff", "emojis"],
+        "keywords": ["smell", "sniff", "whiff", "emojis", "jewnosed"],
         "char": "👃"
     },
     "eye": {
@@ -928,11 +948,11 @@
         "char": "💑"
     },
     "couple_with_heart_woman_woman": {
-        "keywords": ["pair", "love", "like", "affection", "human", "dating", "valentines", "marriage", "emojis"],
+        "keywords": ["pair", "love", "like", "affection", "human", "dating", "valentines", "marriage", "emojis", "lesbian", "dyke"],
         "char": "👩‍❤️‍👩"
     },
     "couple_with_heart_man_man": {
-        "keywords": ["pair", "love", "like", "affection", "human", "dating", "valentines", "marriage", "emojis"],
+        "keywords": ["pair", "love", "like", "affection", "human", "dating", "valentines", "marriage", "emojis", "gay", "faggot"],
         "char": "👨‍❤️‍👨"
     },
     "couplekiss_man_woman": {
@@ -940,11 +960,11 @@
         "char": "💏"
     },
     "couplekiss_woman_woman": {
-        "keywords": ["pair", "valentines", "love", "like", "dating", "marriage", "emojis"],
+        "keywords": ["pair", "valentines", "love", "like", "dating", "marriage", "emojis", "lesbian", "dyke"],
         "char": "👩‍❤️‍💋‍👩"
     },
     "couplekiss_man_man": {
-        "keywords": ["pair", "valentines", "love", "like", "dating", "marriage", "emojis"],
+        "keywords": ["pair", "valentines", "love", "like", "dating", "marriage", "emojis", "gay", "faggot"],
         "char": "👨‍❤️‍💋‍👨"
     },
     "family_man_woman_boy": {
@@ -1260,7 +1280,7 @@
         "char": "🐒"
     },
     "chicken": {
-        "keywords": ["animal", "cluck", "nature", "bird", "cock", "emojis"],
+        "keywords": ["animal", "cluck", "nature", "bird", "cock", "emojis", "cocks"],
         "char": "🐔"
     },
     "penguin": {
@@ -1268,7 +1288,7 @@
         "char": "🐧"
     },
     "bird": {
-        "keywords": ["animal", "nature", "fly", "tweet", "spring", "emojis"],
+        "keywords": ["animal", "nature", "fly", "tweet", "spring", "emojis", "crow", "fightmilk", "crows"],
         "char": "🐦"
     },
     "baby_chick": {
@@ -1288,7 +1308,7 @@
         "char": "🦆"
     },
     "eagle": {
-        "keywords": ["animal", "nature", "bird", "emojis"],
+        "keywords": ["animal", "nature", "bird", "emojis", "crow", "fightmilk", "crows"],
         "char": "🦅"
     },
     "owl": {
@@ -1352,7 +1372,7 @@
         "char": "🦀"
     },
     "snake": {
-        "keywords": ["animal", "evil", "nature", "hiss", "python", "snek", "long", "emojis"],
+        "keywords": ["animal", "evil", "nature", "hiss", "python", "snek", "long", "emojis", "anaconda"],
         "char": "🐍"
     },
     "lizard": {
@@ -1500,7 +1520,7 @@
         "char": "🐾"
     },
     "dragon": {
-        "keywords": ["animal", "myth", "nature", "chinese", "green", "emojis"],
+        "keywords": ["animal", "myth", "nature", "chinese", "green", "emojis", "fantasy", "fantasize"],
         "char": "🐉"
     },
     "dragon_face": {
@@ -1752,7 +1772,7 @@
         "char": "🔥"
     },
     "boom": {
-        "keywords": ["bomb", "explode", "explosion", "collision", "blown", "emojis"],
+        "keywords": ["bomb", "explode", "explosion", "collision", "blown", "emojis", "spank", "punch", "abuse"],
         "char": "💥"
     },
     "snowflake": {
@@ -1800,7 +1820,7 @@
         "char": "💧"
     },
     "sweat_drops": {
-        "keywords": ["water", "drip", "oops", "cum", "cummies", "daddy", "naughty", "juicy", "eilish", "cummy", "teasing", "overflowing", "overflow", "pleasure", "emojis"],
+        "keywords": ["water", "drip", "oops", "cum", "cummies", "daddy", "naughty", "juicy", "eilish", "cummy", "teasing", "overflowing", "overflow", "pleasure", "emojis", "finally", "fantasize"],
         "char": "💦"
     },
     "ocean": {
@@ -1852,7 +1872,7 @@
         "char": "🍒"
     },
     "peach": {
-        "keywords": ["fruit", "nature", "food", "ass", "butt", "juicy", "thicc", "emojis"],
+        "keywords": ["fruit", "nature", "food", "ass", "butt", "juicy", "thicc", "emojis", "rimming"],
         "char": "🍑"
     },
     "pineapple": {
@@ -1872,7 +1892,7 @@
         "char": "🍅"
     },
     "eggplant": {
-        "keywords": ["vegetable", "nature", "food", "aubergine", "dick", "weiner", "penis", "cock", "daddy", "naughty", "phallus", "emojis"],
+        "keywords": ["vegetable", "nature", "food", "aubergine", "dick", "weiner", "penis", "cock", "daddy", "naughty", "phallus", "emojis", "cocksucking"],
         "char": "🍆"
     },
     "cucumber": {
@@ -1908,87 +1928,87 @@
         "char": "🍯"
     },
     "croissant": {
-        "keywords": ["food", "bread", "french", "emojis"],
+        "keywords": ["food", "bread", "french", "emojis", "eat"],
         "char": "🥐"
     },
     "bread": {
-        "keywords": ["food", "wheat", "breakfast", "toast", "emojis"],
+        "keywords": ["food", "wheat", "breakfast", "toast", "emojis", "eat"],
         "char": "🍞"
     },
     "baguette_bread": {
-        "keywords": ["food", "bread", "french", "dick", "weiner", "penis", "cock", "daddy", "emojis"],
+        "keywords": ["food", "bread", "french", "dick", "weiner", "penis", "cock", "daddy", "emojis", "eat", "baguette"],
         "char": "🥖"
     },
     "cheese": {
-        "keywords": ["food", "chadder", "emojis"],
+        "keywords": ["food", "chadder", "emojis", "eat"],
         "char": "🧀"
     },
     "egg": {
-        "keywords": ["food", "chicken", "breakfast", "emojis"],
+        "keywords": ["food", "chicken", "breakfast", "emojis", "eat"],
         "char": "🥚"
     },
     "bacon": {
-        "keywords": ["food", "breakfast", "pork", "pig", "meat", "fat", "emojis"],
+        "keywords": ["food", "breakfast", "pork", "pig", "meat", "fat", "emojis", "eat"],
         "char": "🥓"
     },
     "pancakes": {
-        "keywords": ["food", "breakfast", "flapjacks", "hotcakes", "emojis"],
+        "keywords": ["food", "breakfast", "flapjacks", "hotcakes", "emojis", "eat"],
         "char": "🥞"
     },
     "poultry_leg": {
-        "keywords": ["food", "meat", "drumstick", "bird", "chicken", "turkey", "emojis"],
+        "keywords": ["food", "meat", "drumstick", "bird", "chicken", "turkey", "emojis", "eat"],
         "char": "🍗"
     },
     "meat_on_bone": {
-        "keywords": ["good", "food", "drumstick", "fat", "emojis"],
+        "keywords": ["good", "food", "drumstick", "fat", "emojis", "eat"],
         "char": "🍖"
     },
     "fried_shrimp": {
-        "keywords": ["food", "animal", "appetizer", "summer", "emojis"],
+        "keywords": ["food", "animal", "appetizer", "summer", "emojis", "eat"],
         "char": "🍤"
     },
     "fried_egg": {
-        "keywords": ["food", "breakfast", "kitchen", "egg", "emojis"],
+        "keywords": ["food", "breakfast", "kitchen", "egg", "emojis", "eat"],
         "char": "🍳"
     },
     "hamburger": {
-        "keywords": ["meat", "fastfood", "beef", "cheeseburger", "mcdonalds", "burgerking", "fat", "emojis"],
+        "keywords": ["meat", "fastfood", "beef", "cheeseburger", "mcdonalds", "burgerking", "fat", "emojis", "eat"],
         "char": "🍔"
     },
     "fries": {
-        "keywords": ["chips", "snack", "fastfood", "fat", "emojis"],
+        "keywords": ["chips", "snack", "fastfood", "fat", "emojis", "eat"],
         "char": "🍟"
     },
     "stuffed_flatbread": {
-        "keywords": ["food", "flatbread", "stuffed", "gyro", "emojis"],
+        "keywords": ["food", "flatbread", "stuffed", "gyro", "emojis", "eat"],
         "char": "🥙"
     },
     "hotdog": {
-        "keywords": ["food", "frankfurter", "sex", "fat", "emojis"],
+        "keywords": ["food", "frankfurter", "sex", "fat", "emojis", "eat"],
         "char": "🌭"
     },
     "pizza": {
-        "keywords": ["food", "party", "fastfood", "fat", "emojis"],
+        "keywords": ["food", "party", "fastfood", "fat", "emojis", "eat"],
         "char": "🍕"
     },
     "spaghetti": {
-        "keywords": ["food", "italian", "noodle", "emojis"],
+        "keywords": ["food", "italian", "noodle", "emojis", "eat"],
         "char": "🍝"
     },
     "taco": {
-        "keywords": ["food", "mexican", "pussy", "vagina", "sex", "emojis"],
+        "keywords": ["food", "mexican", "pussy", "vagina", "sex", "emojis", "eat"],
         "char": "🌮"
     },
     "burrito": {
-        "keywords": ["food", "mexican", "emojis"],
+        "keywords": ["food", "mexican", "emojis", "eat"],
         "char": "🌯"
     },
     "green_salad": {
-        "keywords": ["food", "healthy", "lettuce", "emojis"],
+        "keywords": ["food", "healthy", "lettuce", "emojis", "eat"],
         "char": "🥗"
     },
     "shallow_pan_of_food": {
-        "keywords": ["food", "cooking", "casserole", "paella", "emojis"],
+        "keywords": ["food", "cooking", "casserole", "paella", "emojis", "eat"],
         "char": "🥘"
     },
     "ramen": {
@@ -2084,7 +2104,7 @@
         "char": "🍪"
     },
     "milk_glass": {
-        "keywords": ["beverage", "drink", "cow", "emojis"],
+        "keywords": ["beverage", "drink", "cow", "emojis", "buttermilk", "milk", "cummies", "cum", "fightmilk"],
         "char": "🥛"
     },
     "beer": {
@@ -2098,6 +2118,10 @@
     "clinking_glasses": {
         "keywords": ["beverage", "drink", "party", "alcohol", "celebrate", "cheers", "bump", "emojis"],
         "char": "🥂"
+    },
+    "juice": {
+        "keywords": ["juicebox", "juicy", "drink", "fruit"],
+        "char": "🧃"
     },
     "wine_glass": {
         "keywords": ["drink", "beverage", "drunk", "alcohol", "booze", "emojis"],
@@ -2320,7 +2344,7 @@
         "char": "⛹"
     },
     "weight_lifting_woman": {
-        "keywords": ["sports", "training", "exercise", "woman", "female", "emojis"],
+        "keywords": ["sports", "training", "exercise", "woman", "female", "emojis", "dyke"],
         "char": "🏋️‍♀️"
     },
     "weight_lifting_man": {
@@ -2456,7 +2480,7 @@
         "char": "🎬"
     },
     "video_game": {
-        "keywords": ["play", "console", "PS4", "controller", "emojis"],
+        "keywords": ["play", "console", "PS4", "controller", "emojis", "fortnite", "valorant", "minecraft", "xbox", "ewhore", "ethot"],
         "char": "🎮"
     },
     "space_invader": {
@@ -2936,7 +2960,7 @@
         "char": "🏛"
     },
     "church": {
-        "keywords": ["building", "religion", "christ", "emojis"],
+        "keywords": ["building", "religion", "christ", "emojis", "jesus"],
         "char": "⛪"
     },
     "mosque": {
@@ -3136,35 +3160,35 @@
         "char": "🛢"
     },
     "money_with_wings": {
-        "keywords": ["dollar", "bills", "payment", "sale", "emojis"],
+        "keywords": ["dollar", "bills", "payment", "sale", "emojis", "bought"],
         "char": "💸"
     },
     "dollar": {
-        "keywords": ["money", "sales", "bill", "currency", "emojis"],
+        "keywords": ["money", "sales", "bill", "currency", "emojis", "bought"],
         "char": "💵"
     },
     "yen": {
-        "keywords": ["money", "sales", "japanese", "dollar", "currency", "emojis"],
+        "keywords": ["money", "sales", "japanese", "dollar", "currency", "emojis", "bought"],
         "char": "💴"
     },
     "euro": {
-        "keywords": ["money", "sales", "dollar", "currency", "emojis"],
+        "keywords": ["money", "sales", "dollar", "currency", "emojis", "bought"],
         "char": "💶"
     },
     "pound": {
-        "keywords": ["british", "sterling", "money", "sales", "bills", "uk", "england", "currency", "emojis"],
+        "keywords": ["british", "sterling", "money", "sales", "bills", "uk", "england", "currency", "emojis", "bought"],
         "char": "💷"
     },
     "moneybag": {
-        "keywords": ["dollar", "payment", "coins", "sale", "emojis"],
+        "keywords": ["dollar", "payment", "coins", "sale", "emojis", "bought"],
         "char": "💰"
     },
     "credit_card": {
-        "keywords": ["money", "sales", "dollar", "bill", "payment", "shopping", "emojis"],
+        "keywords": ["money", "sales", "dollar", "bill", "payment", "shopping", "emojis", "bought", "sugarbaby", "daddy"],
         "char": "💳"
     },
     "gem": {
-        "keywords": ["blue", "ruby", "diamond", "jewelry", "emojis"],
+        "keywords": ["blue", "ruby", "diamond", "jewelry", "emojis", "wealth", "rich", "riches"],
         "char": "💎"
     },
     "balance_scale": {
@@ -3224,7 +3248,7 @@
         "char": "⚔"
     },
     "shield": {
-        "keywords": ["protection", "security", "emojis"],
+        "keywords": ["protection", "security", "emojis", "tank", "knight", "medieval"],
         "char": "🛡"
     },
     "smoking": {
@@ -3722,7 +3746,7 @@
         "char": "💞"
     },
     "heartbeat": {
-        "keywords": ["love", "like", "affection", "valentines", "pink", "heart", "excited", "sex", "emojis"],
+        "keywords": ["love", "like", "affection", "valentines", "pink", "heart", "excited", "sex", "emojis", "writhe"],
         "char": "💓"
     },
     "heartpulse": {
@@ -3750,7 +3774,7 @@
         "char": "☮"
     },
     "latin_cross": {
-        "keywords": ["christianity", "emojis"],
+        "keywords": ["christianity", "emojis", "jesus", "church", "cross"],
         "char": "✝"
     },
     "star_and_crescent": {
@@ -3770,7 +3794,7 @@
         "char": "✡"
     },
     "six_pointed_star": {
-        "keywords": ["purple-square", "religion", "jewish", "hexagram", "emojis"],
+        "keywords": ["purple-square", "religion", "jewish", "hexagram", "emojis", "jewnosed"],
         "char": "🔯"
     },
     "menorah": {
@@ -3957,12 +3981,16 @@
         "keywords": ["fire", "forbid", "emojis"],
         "char": "📛"
     },
+    "sirens": {
+        "keywords": ["emergancy", "police", "arrest", "arrested"],
+        "char": "🔴🔵🔴"
+    },
     "no_entry_sign": {
-        "keywords": ["forbid", "stop", "limit", "denied", "disallow", "circle", "emojis"],
+        "keywords": ["forbid", "stop", "limit", "denied", "disallow", "circle", "emojis", "not", "deleted"],
         "char": "🚫"
     },
-    "x": {
-        "keywords": ["no", "delete", "remove", "cancel", "emojis"],
+    "_redx": {
+        "keywords": ["no", "delete", "remove", "cancel", "emojis", "none", "none", "error", "pitiful"],
         "char": "❌"
     },
     "o": {
@@ -4090,7 +4118,7 @@
         "char": "❎"
     },
     "white_check_mark": {
-        "keywords": ["green-square", "ok", "agree", "vote", "election", "answer", "tick", "emojis"],
+        "keywords": ["green-square", "ok", "agree", "vote", "election", "answer", "tick", "emojis", "authorized"],
         "char": "✅"
     },
     "diamond_shape_with_a_dot_inside": {
@@ -4530,7 +4558,7 @@
         "char": "🔇"
     },
     "mega": {
-        "keywords": ["sound", "speaker", "volume", "emojis"],
+        "keywords": ["sound", "speaker", "volume", "emojis", "annoucing", "announcement"],
         "char": "📣"
     },
     "loudspeaker": {
@@ -4582,7 +4610,7 @@
         "char": "🗯"
     },
     "speech_balloon": {
-        "keywords": ["bubble", "words", "message", "talk", "chatting", "emojis"],
+        "keywords": ["bubble", "words", "message", "talk", "chatting", "emojis", "quote"],
         "char": "💬"
     },
     "left_speech_bubble": {
